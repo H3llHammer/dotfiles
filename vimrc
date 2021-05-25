@@ -22,7 +22,6 @@ set undofile
 set incsearch
 "set termguicolors
 set cursorline
-"set cursorcolumn
 set scrolloff=8
 set modifiable
 set noshowmode
@@ -37,7 +36,7 @@ let g:airline_theme='apprentice'
 syntax sync fromstart
 
 " Give more space for displaying messages.
-set cmdheight=2
+"set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -73,9 +72,6 @@ let g:NERDTreeIgnore = ['^node_modules$']
 
 let loaded_matchparen = 1
 let mapleader = " "
-
-"Rainbow brackets
-let g:rainbow_active = 1
 
 " CoC
 " GoTo code navigation.
