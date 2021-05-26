@@ -35,6 +35,9 @@ let g:airline_theme='apprentice'
 
 syntax sync fromstart
 
+let loaded_matchparen = 1
+let mapleader = " "
+
 " Give more space for displaying messages.
 "set cmdheight=2
 
@@ -49,9 +52,9 @@ set colorcolumn=100
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Exit and save commands
-map q :q<CR>
-map w :w<CR>
-map ! :q!<CR>
+map <leader>q :q<CR>
+map <leader>w :w<CR>
+map <leader>! :q!<CR>
 
 "map <C-n> :NERDTreeToggle<CR>
 map <C-p> :Files<CR>
@@ -61,17 +64,14 @@ map <S-Tab> :bn<CR>
 map <F5> :setlocal spell! spelllang=en_gb<CR>
 
 "Searching the file system
-map <leader>nt :NERDTreeToggle<cr>
-map <Leader>nf :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>nf :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=1
 
 " NERDTreeIgnore
 let g:NERDTreeIgnore = ['^node_modules$']
-
-let loaded_matchparen = 1
-let mapleader = " "
 
 " CoC
 " GoTo code navigation.
