@@ -73,6 +73,10 @@ let NERDTreeAutoDeleteBuffer=1
 " NERDTreeIgnore
 let g:NERDTreeIgnore = ['^node_modules$']
 
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
 " CoC
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
@@ -125,8 +129,9 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_fix_on_save = 1
 
-" Close NERDTree when closing the last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
