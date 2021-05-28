@@ -62,6 +62,10 @@ Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+Plug 'frazrepo/vim-rainbow'
+
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 set background=dark

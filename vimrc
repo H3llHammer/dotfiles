@@ -38,6 +38,8 @@ syntax sync fromstart
 let loaded_matchparen = 1
 let mapleader = " "
 
+let g:rainbow_active = 1
+
 " Give more space for displaying messages.
 "set cmdheight=2
 
