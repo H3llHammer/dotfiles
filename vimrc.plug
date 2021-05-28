@@ -66,6 +66,8 @@ Plug 'frazrepo/vim-rainbow'
 
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 set background=dark
