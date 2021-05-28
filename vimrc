@@ -51,10 +51,20 @@ set shortmess+=c
 set colorcolumn=100
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+" Reload vim config
+nmap <C-r> :source ~/.vimrc<CR>
+
 " Exit and save commands
 map <leader>q :q<CR>
 map <leader>w :w<CR>
 map <leader>! :q!<CR>
+
+"Move between buffers
+map <leader>bn :bn<CR>
+map <leader>bp :bp<CR>
+
+"Delete the current buffer; will fail if unsaved.
+map <leader>bd :bd<CR>
 
 "map <C-n> :NERDTreeToggle<CR>
 map <C-p> :Files<CR>
@@ -76,6 +86,9 @@ let g:NERDTreeIgnore = ['^node_modules$']
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " CoC
 " GoTo code navigation.
