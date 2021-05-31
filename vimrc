@@ -160,6 +160,21 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_fix_on_save = 1
 
+" Coc tab completion
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+    \ pumvisible( ? ""\<C-n>" :")
+    \ <SID>check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " Start NERDTree Config
 " Start NERDTree and leave the cursor in it.
 "autocmd VimEnter * NERDTree
