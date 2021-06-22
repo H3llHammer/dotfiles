@@ -17,7 +17,7 @@ Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 "
 " Statusbar
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
 "
 " Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -58,6 +58,7 @@ Plug 'kevinoid/vim-jsonc'
 Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'leafgarland/typescript-vim'
+
 Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -69,6 +70,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+Plug 'mcchrish/nnn.vim'
 
 call plug#end()
 
