@@ -31,7 +31,8 @@ set clipboard+=unnamed
 set showmatch
 
 " Set Airline theme
-let g:airline_theme='apprentice'
+let g:airline_theme='base16_gruvbox_dark_hard'
+" let g:airline_theme='apprentice'
 
 syntax sync fromstart
 
@@ -53,9 +54,6 @@ set shortmess+=c
 set colorcolumn=100
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" Reload vim config
-nmap <C-r> :source ~/.vimrc<CR>
-
 " Exit and save commands
 map <leader>q :q<CR>
 map <leader>w :w<CR>
@@ -69,6 +67,11 @@ map <leader>bp :bp<CR>
 map <leader>bd :bd<CR>
 map <S-Tab> :bn<CR>
 map <F5> :setlocal spell! spelllang=en_gb<CR>
+
+" System Clipboard
+"inoremap <C-v> <ESC>"+pa
+"vnoremap <C-c> "+y
+"vnoremap <C-d> "+d
 
 "Searching the file system
 nmap <leader>nt :NERDTreeToggle<CR>
