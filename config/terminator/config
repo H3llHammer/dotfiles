@@ -1,0 +1,49 @@
+[global_config]
+  window_state = maximise
+  borderless = True
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  always_split_with_profile = True
+  title_use_system_font = False
+  title_font = MesloLGS NF Bold 12
+[keybindings]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    show_titlebar = False
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+  [[Custom]]
+    visible_bell = True
+    icon_bell = False
+    background_color = "#282828"
+    background_darkness = 1.0
+    cursor_blink = False
+    cursor_shape = ibeam
+    cursor_color = "#cc0000"
+    font = JetBrains Mono Bold 14
+    foreground_color = "#f6f5f4"
+    show_titlebar = False
+    use_system_font = False
+  [[Afterglow]]
+    visible_bell = True
+    icon_bell = False
+    background_color = "#212121"
+    background_darkness = 1.0
+    cursor_blink = False
+    cursor_shape = ibeam
+    cursor_color = "#d0d0d0"
+    font = JetBrains Mono Bold 14
+    foreground_color = "#d0d0d0"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#151515:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#d0d0d0:#505050:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#f5f5f5"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = Afterglow
+[plugins]
