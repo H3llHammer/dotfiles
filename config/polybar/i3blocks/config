@@ -1,0 +1,31 @@
+command=~/.config/i3blocks/scripts/$BLOCK_NAME
+
+[audio]
+interval=5
+
+[microphone]
+color=#FFFFFF
+interval=5
+
+[keyindicator]
+#Allowed keys are CAPS and NUM
+KEY=CAPS
+markup=pango
+interval=once
+signal=11
+#TEXT_ON=CapsLockOn
+#TEXT_OFF=CapsLockOff
+#COLOR_ON=#00FF00
+#COLOR_OFF=#222222
+#BG_COLOR_ON=
+#BG_COLOR_OFF=
+
+[rofi-calendar]
+interval=3600
+
+[time]
+command=date '+  %H:%M'
+interval=1
+
+[shutdown_menu]
+full_text=  Quit
