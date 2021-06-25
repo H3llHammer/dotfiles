@@ -1,8 +1,6 @@
 #!/bin/sh
 
 DEFAULT_SOURCE_INDEX=$(pacmd list-sources | grep "\* index:" | cut -d' ' -f5)
-RED='\033[0;31m'
-NC='\033[0m'
 
 display_volume() {
 	if [ -z "$volume" ]; then
