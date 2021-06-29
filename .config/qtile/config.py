@@ -77,6 +77,7 @@ group_names = [(" NET", {'layout': 'monadtall'}),
                (" DEV", {'layout': 'monadtall'}),
                (" TERM", {'layout': 'monadtall'}),
                (" SYS", {'layout': 'monadtall'}),
+               (" MAIL", {'layout': 'monadtall'}),
                (" MUS", {'layout': 'monadtall'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
@@ -165,6 +166,12 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 8,
+                       foreground = colors[2],
+                       background = colors[0]
+                       ),
                 widget.TextBox(
                       text = "",
                       foreground='A1CAE2',
