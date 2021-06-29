@@ -69,7 +69,7 @@ colors = [["#383E56"], # panel background
           ["#ffffff"], # font color for group names
           ["#FF7171"], # border line color for current tab
           ["#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#4f76c7"], # color for the 'even widgets'
+          ["#6886C5"], # color for the 'even widgets'
           ["#ff5131"], # window name
           ["#92967D"]] # foreground for inactive screens
 
@@ -165,6 +165,11 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
+                widget.TextBox(
+                      text = "",
+                      foreground='A1CAE2',
+                       padding = 0
+                       ),
                 widget.Volume(
                     foreground='A1CAE2',
                     step=5,
@@ -172,7 +177,7 @@ screens = [
                 widget.Clock(
                     fontsize=14,
                     foreground='5AA469',
-                    format='%a %d %b %I:%M %p',
+                    format=' %a %d %b %I:%M %p',
                     ),
                 widget.CurrentLayout(
                     background='776D8A'
