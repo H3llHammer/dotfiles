@@ -122,6 +122,12 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 6,
+                       foreground = colors[2],
+                       background = colors[0]
+                       ),
                 widget.GroupBox(
                     fontsize = 12,
                     margin_y = 3,
@@ -142,6 +148,12 @@ screens = [
                     background = colors[0]
                     ),
                 widget.Prompt(),
+                widget.Sep(
+                       linewidth = 0,
+                       padding = 6,
+                       foreground = colors[2],
+                       background = colors[0]
+                       ),
                 widget.WindowName(
                     fontsize=12,
                     foreground='CD5D7D'
