@@ -91,10 +91,20 @@ keys = [
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
 ]
 
-group_names = [("NET", {'layout': 'monadtall'}),
-               ("DEV", {'layout': 'monadtall'}),
-               ("SYS", {'layout': 'monadtall'}),
-               ("MUS", {'layout': 'monadtall'})]
+colors = [["#282c34", "#282c34"], # panel background
+          ["#3d3f4b", "#434758"], # background for current screen tab
+          ["#ffffff", "#ffffff"], # font color for group names
+          ["#ff5555", "#ff5555"], # border line color for current tab
+          ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
+          ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
+          ["#ff5131", "#ff5131"], # window name
+          ["#0074FF", "#ecbbfb"]] # backbround for inactive screens
+
+group_names = [(" NET", {'layout': 'monadtall'}),
+               (" DEV", {'layout': 'monadtall'}),
+               (" TERM", {'layout': 'monadtall'}),
+               (" SYS", {'layout': 'monadtall'}),
+               (" MUS", {'layout': 'monadtall'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -106,24 +116,34 @@ layouts = [
     layout.MonadTall(border_width=1,margin=5),
     layout.Columns(border_focus_stack='#d75f5f'),
     layout.Max(),
+    layout.TreeTab(
+         fontsize = 10,
+         sections = ["FIRST", "SECOND", "THIRD", "FOURTH"],
+         section_fontsize = 10,
+         border_width = 2,
+         bg_color = "1c1f24",
+         active_bg = "c678dd",
+         active_fg = "000000",
+         inactive_bg = "a9a1e1",
+         inactive_fg = "1c1f24",
+         padding_left = 0,
+         padding_x = 0,
+         padding_y = 5,
+         section_top = 10,
+         section_bottom = 20,
+         level_shift = 8,
+         vspace = 3,
+         panel_width = 200
+         )
 ]
 
 widget_defaults = dict(
     font='JetBrainsMono',
-    #font='JetBrains Mono Bold',
     fontsize=12,
     padding=2,
+    background="#3d3f4b"
 )
 extension_defaults = widget_defaults.copy()
-
-colors = [["#282c34", "#282c34"], # panel background
-          ["#3d3f4b", "#434758"], # background for current screen tab
-          ["#ffffff", "#ffffff"], # font color for group names
-          ["#ff5555", "#ff5555"], # border line color for current tab
-          ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
-          ["#0400FF", "#0400FF"], # window name
-          ["#0074FF", "#ecbbfb"]] # backbround for inactive screens
 
 screens = [
     Screen(
@@ -131,7 +151,7 @@ screens = [
             [
                 widget.GroupBox(
                     font='JetBrains Mono Bold',
-                    fontsize = 9,
+                    fontsize = 12,
                     margin_y = 3,
                     margin_x = 0,
                     padding_y = 5,
@@ -150,7 +170,10 @@ screens = [
                     background = colors[0]
                     ),
                 widget.Prompt(),
-                widget.WindowName(),
+                widget.WindowName(
+                    font='jetbrains mono bold',
+                    fontsize=14,
+                    ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -179,7 +202,7 @@ screens = [
                     padding=0
                     ),
                 widget.Clock(
-                    font='JetBrains Mono Bold',
+                    font='jetbrains mono bold',
                     fontsize=12,
                     format='%a %d %b %I:%M %p',
                     background='969696'
@@ -193,9 +216,12 @@ screens = [
                     ),
                 widget.CurrentLayout(
                     font='JetBrains Mono Bold',
-                    fontsize=12,
+                    fontsize=14,
                         ),
-                widget.QuickExit(),
+                widget.QuickExit(
+                    font='JetBrains Mono Bold',
+                    fontsize=14,
+                        ),
             ],
             24,
         ),
