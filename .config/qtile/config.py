@@ -1,29 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import os
 import subprocess
 
@@ -36,7 +10,6 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = guess_terminal()
-
 
 keys = [
     # Switch between windows
@@ -91,14 +64,14 @@ keys = [
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
 ]
 
-colors = [["#282c34", "#282c34"], # panel background
-          ["#3d3f4b", "#434758"], # background for current screen tab
-          ["#ffffff", "#ffffff"], # font color for group names
-          ["#ff5555", "#ff5555"], # border line color for current tab
-          ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
-          ["#ff5131", "#ff5131"], # window name
-          ["#0074FF", "#ecbbfb"]] # backbround for inactive screens
+colors = [["#383E56"], # panel background
+          ["#3d3f4b"], # background for current screen tab
+          ["#ffffff"], # font color for group names
+          ["#FF7171"], # border line color for current tab
+          ["#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
+          ["#4f76c7"], # color for the 'even widgets'
+          ["#ff5131"], # window name
+          ["#92967D"]] # foreground for inactive screens
 
 group_names = [(" NET", {'layout': 'monadtall'}),
                (" DEV", {'layout': 'monadtall'}),
@@ -138,10 +111,10 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='JetBrainsMono',
-    fontsize=12,
-    padding=2,
-    background="#3d3f4b"
+    font='jetbrains mono bold',
+    fontsize=14,
+    padding=8,
+    background=colors[0]
 )
 extension_defaults = widget_defaults.copy()
 
@@ -150,7 +123,6 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(
-                    font='JetBrains Mono Bold',
                     fontsize = 12,
                     margin_y = 3,
                     margin_x = 0,
@@ -171,8 +143,8 @@ screens = [
                     ),
                 widget.Prompt(),
                 widget.WindowName(
-                    font='jetbrains mono bold',
-                    fontsize=14,
+                    fontsize=12,
+                    foreground='CD5D7D'
                     ),
                 widget.Chord(
                     chords_colors={
@@ -181,46 +153,20 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
-                widget.TextBox(
-                    text="",
-                    foreground='0074FF',
-                    fontsize=37,
-                    padding=0
-                    ),
                 widget.Volume(
-                    font='JetBrains Mono Bold',
-                    background='0074FF',
+                    foreground='A1CAE2',
                     step=5,
-                    fontsize=12,
-                    padding=0
-                    ),
-                widget.TextBox(
-                    text="",
-                    background='0074FF',
-                    foreground='969696',
-                    fontsize=37,
-                    padding=0
                     ),
                 widget.Clock(
-                    font='jetbrains mono bold',
-                    fontsize=12,
+                    fontsize=14,
+                    foreground='5AA469',
                     format='%a %d %b %I:%M %p',
-                    background='969696'
-                    ),
-                widget.TextBox(
-                    text="",
-                    foreground='000000',
-                    background='969696',
-                    fontsize=37,
-                    padding=0
                     ),
                 widget.CurrentLayout(
-                    font='JetBrains Mono Bold',
-                    fontsize=14,
+                    background='776D8A'
                         ),
                 widget.QuickExit(
-                    font='JetBrains Mono Bold',
-                    fontsize=14,
+                    foreground='CD5D7D'
                         ),
             ],
             24,
@@ -256,18 +202,8 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 
-# If things like steam games want to auto-minimize themselves when losing
-# focus, should we respect this or not?
 auto_minimize = True
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
 wmname = "LG3D"
 
 @hook.subscribe.startup_once
