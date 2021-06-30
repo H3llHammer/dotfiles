@@ -1,4 +1,4 @@
-# My enviroment config
+# My environment config
 
 ## Qtile
 
