@@ -52,6 +52,8 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Put the focused window to/from fullscreen mode"),
+    Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Put the focused window to/from floating mode"),
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -62,6 +64,7 @@ keys = [
     Key([mod], "d", lazy.spawn("rofi -show drun -show-icons -icon-theme Papirus")),
     Key([mod], "e", lazy.spawn(terminal + " -e nnn")),
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
+    Key([mod], "p", lazy.spawn("pavucontrol")),
 ]
 
 colors = [["#383E56"], # panel background
@@ -219,6 +222,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(wm_class='Pavucontrol'), # volume control
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
 ])
