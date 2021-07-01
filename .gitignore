@@ -2,3 +2,4 @@
 .vim/plugged/*
 
 .config/qtile/__pycache__
+.config/terminator/plugins
