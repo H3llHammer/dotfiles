@@ -13,3 +13,8 @@ alias hibernate="systemctl hibernate"
 
 # Variables
 export EDITOR="/usr/bin/vim"
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
