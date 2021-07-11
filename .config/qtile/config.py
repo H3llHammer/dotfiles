@@ -83,7 +83,7 @@ group_names = [(" NET", {'layout': 'monadtall'}),
                (" TERM", {'layout': 'monadtall'}),
                (" SYS", {'layout': 'monadtall'}),
                (" MAIL", {'layout': 'monadtall'}),
-               (" MUS", {'layout': 'monadtall'})]
+               ]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -92,8 +92,9 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
 layouts = [
-    layout.MonadTall(border_width=1,margin=5),
-    layout.Columns(border_focus_stack='#d75f5f'),
+    layout.MonadTall(border_focus='CD5D7D',border_width=2,margin=5),
+    layout.MonadWide(bborder_focus='CD5D7D',order_width=1,margin=5),
+    layout.Matrix(border_focus='CD5D7D',order_width=1,margin=5),
     layout.Max(),
 ]
 
