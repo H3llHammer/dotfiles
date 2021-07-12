@@ -1,5 +1,5 @@
 # starship prompt
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 # zsh autocomplete
 autoload -Uz compinit
@@ -18,3 +18,5 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
