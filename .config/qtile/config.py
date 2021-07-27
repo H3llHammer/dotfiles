@@ -64,7 +64,7 @@ keys = [
     # Hotkeys
     EzKey("M-d", lazy.spawn("rofi -show drun -show-icons -icon-theme Papirus")),
     EzKey("M-S-e", lazy.spawn(terminal + " -e nnn")),
-    EzKey("M-e", lazy.spawn("pcmanfm")),
+    EzKey("M-e", lazy.spawn("thunar")),
     EzKey("M-S-s", lazy.spawn("flameshot gui")),
     EzKey("M-p", lazy.spawn("pavucontrol")),
 ]
