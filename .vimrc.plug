@@ -2,4 +2,9 @@
 
 call plug#begin('~/.vim/plugged')
 
+" vim Airline
+Plug 'vim-airline/vim-airline'
+" vim Airline themes
+"Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
