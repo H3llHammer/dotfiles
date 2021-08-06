@@ -2,6 +2,7 @@
 source ~/.vimrc.plug	    " Call the plugins file
 
 syntax on		    " Enable syntax highlight
+set encoding=utf-8	    " UTF-8 encoding enabled
 set number		    " Show line numbers
 set noswapfile
 " set wrap linebreak nolist
