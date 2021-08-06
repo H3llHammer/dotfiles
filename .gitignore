@@ -1,5 +1,6 @@
 .vim/plugged
 .vim/plugged/*
+.vim/.netrwhist
 
 .config/qtile/__pycache__
 .config/terminator/plugins
