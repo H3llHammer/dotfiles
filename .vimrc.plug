@@ -24,4 +24,7 @@ Plug 'voldikss/vim-floaterm'
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Rainbow
+Plug 'frazrepo/vim-rainbow'
+
 call plug#end()
