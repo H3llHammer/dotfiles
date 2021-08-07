@@ -4,7 +4,18 @@ call plug#begin('~/.vim/plugged')
 
 " vim Airline
 Plug 'vim-airline/vim-airline'
+
 " vim Airline themes
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
+
+" NERDTree file manager
+Plug 'preservim/nerdtree' 
+
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Gitgutter
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
