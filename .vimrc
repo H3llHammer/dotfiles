@@ -36,6 +36,8 @@ set noshowcmd		    " Don't show command status
 "" Variables
 " Map leader
 let mapleader = " "				" Set space as map leader
+" Disable matching parenthesis highlighting
+let g:loaded_matchparen=1
 " Airline
 let g:airline_powerline_fonts = 1		" Enabled powerline symbols
 let g:airline#extensions#tabline#enabled = 1	" Display a tab line at the top containing the name of all open buffers
@@ -46,8 +48,13 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 " Floaterm
 let g:floaterm_keymap_toggle = '<F12>'		" Open/Close floating terminal
 let g:floaterm_keymap_kill = '<F2>'		" Kill current floating terminal
+" Rainbow
+let g:rainbow_active = 1                        " Enable rainbow parentheses
 " CoC suggestion box
 hi Pmenu ctermbg=black ctermfg=white
+" Visual mode color
+"hi Visual cterm=NONE ctermbg=black ctermfg=NONE guibg=Grey40
+hi Visual cterm=none ctermbg=darkgrey ctermfg=cyan
 
 "" Key Bindings
 " Save and exit
