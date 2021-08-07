@@ -46,6 +46,8 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 " Floaterm
 let g:floaterm_keymap_toggle = '<F12>'		" Open/Close floating terminal
 let g:floaterm_keymap_kill = '<F2>'		" Kill current floating terminal
+" CoC suggestion box
+hi Pmenu ctermbg=black ctermfg=white
 
 "" Key Bindings
 " Save and exit
@@ -72,6 +74,12 @@ let g:floaterm_keymap_kill = '<F2>'		" Kill current floating terminal
 " GitGutter
     " On/Off GitGutter
     map <leader>go :GitGutterToggle<CR>
+" CoC
+    " Go to code navigation 
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
 
 "" Commands
 " Start NERDTree when Vim is started without file arguments.
@@ -81,4 +89,16 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
-
+" CoC
+" Tab trigger completion
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+inoremap <silent><expr> <Tab>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+" Use enter to select the completion item
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
