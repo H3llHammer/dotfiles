@@ -21,4 +21,7 @@ Plug 'airblade/vim-gitgutter'
 " Floaterm
 Plug 'voldikss/vim-floaterm'
 
+" CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
