@@ -42,4 +42,6 @@ Plug 'peitalin/vim-jsx-typescript'
 " Styled components syntax
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+Plug 'honza/vim-snippets'
+
 call plug#end()
