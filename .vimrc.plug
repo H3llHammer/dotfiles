@@ -27,4 +27,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Rainbow
 Plug 'frazrepo/vim-rainbow'
 
+" JavaScript syntax
+Plug 'pangloss/vim-javascript' 
+
+" TypeScript syntax
+Plug 'leafgarland/typescript-vim'
+
+" JavaScript jsx syntax
+Plug 'MaxMEllon/vim-jsx-pretty'
+
+" TypeScript tsx syntax
+Plug 'peitalin/vim-jsx-typescript'
+
+" Styled components syntax
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 call plug#end()
