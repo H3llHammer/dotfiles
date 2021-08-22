@@ -54,8 +54,8 @@ configuration {
 /*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
-/*	show-match: true;*/
-	theme: "Arc-Dark";
+	show-match: true;
+	theme: "Pop-Dark";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
