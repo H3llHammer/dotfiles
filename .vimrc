@@ -51,7 +51,22 @@ let g:floaterm_keymap_kill = '<F2>'		" Kill current floating terminal
 " Rainbow
 let g:rainbow_active = 1                        " Enable rainbow parentheses
 " CoC
-let g:coc_global_extensions = ['coc-json', 'coc-tailwindcss', 'coc-snippets', 'coc-prettier', 'coc-html-css-support', 'coc-html', 'coc-eslint', 'coc-tsserver', 'coc-sql', 'coc-sh', 'coc-react-refactor', 'coc-python', 'coc-pyright', 'coc-phpls', 'coc-java', 'coc-css', ]
+let g:coc_global_extensions = ['coc-json', 
+	    \ 'coc-tailwindcss',	
+	    \ 'coc-snippets', 
+	    \ 'coc-prettier', 
+	    \ 'coc-html-css-support', 
+	    \ 'coc-html',
+	    \ 'coc-eslint', 
+	    \ 'coc-tsserver', 
+	    \ 'coc-sql', 
+	    \ 'coc-sh',
+	    \ 'coc-react-refactor', 
+	    \ 'coc-python', 
+	    \ 'coc-pyright', 
+	    \ 'coc-phpls', 
+	    \ 'coc-java', 
+	    \ 'coc-css', ]
 " CoC suggestion box
 hi Pmenu ctermbg=black ctermfg=white
 " Visual mode color
