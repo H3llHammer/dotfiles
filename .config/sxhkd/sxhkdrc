@@ -1,0 +1,17 @@
+super + shift + m
+   bash /home/alberto/Scripts/mute.sh
+
+super + control + m
+   bash /home/alberto/Scripts/mic.sh
+
+super + shift + u
+    amixer set Master 5%+ &>/dev/null
+
+super + shift + d
+    amixer set Master 5%- &>/dev/null
+
+super + control + u
+    amixer set Capture 5%+ &>/dev/null
+
+super + control + d
+    amixer set Capture 5%- &>/dev/null
