@@ -11,12 +11,12 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = guess_terminal()
 
-#modifier_keys = {
+# modifier_keys = {
 #   'M': 'mod4',
 #   'A': 'mod1',
 #   'S': 'shift',
 #   'C': 'control',
-#}
+# }
 
 keys = [
     # Switch between windows
@@ -24,12 +24,14 @@ keys = [
     EzKey("M-l", lazy.layout.right(), desc="Move focus to right"),
     EzKey("M-j", lazy.layout.down(), desc="Move focus down"),
     EzKey("M-k", lazy.layout.up(), desc="Move focus up"),
-    EzKey("M-<space>", lazy.layout.next(), desc="Move window focus to other window"),
+    EzKey("M-<space>", lazy.layout.next(),
+          desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     EzKey("M-S-h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    EzKey("M-S-l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    EzKey("M-S-l", lazy.layout.shuffle_right(),
+          desc="Move window to the right"),
     EzKey("M-S-j", lazy.layout.shuffle_down(), desc="Move window down"),
     EzKey("M-S-k", lazy.layout.shuffle_up(), desc="Move window up"),
 
@@ -46,16 +48,16 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     EzKey("M-S-<Return>", lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack"),
+          desc="Toggle between split and unsplit sides of stack"),
     EzKey("M-<Return>", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
     EzKey("M-<Tab>", lazy.next_layout(), desc="Toggle between layouts"),
     EzKey("M-w", lazy.window.kill(), desc="Kill focused window"),
     EzKey("M-f", lazy.window.toggle_fullscreen(),
-        desc="Put the focused window to/from fullscreen mode"),
+          desc="Put the focused window to/from fullscreen mode"),
     EzKey("M-S-f", lazy.window.toggle_floating(),
-        desc="Put the focused window to/from floating mode"),
+          desc="Put the focused window to/from floating mode"),
 
     EzKey("M-C-r", lazy.restart(), desc="Restart Qtile"),
     EzKey("M-C-q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -69,14 +71,14 @@ keys = [
     EzKey("M-p", lazy.spawn("pavucontrol")),
 ]
 
-colors = [["#383E56"], # panel background
-          ["#3d3f4b"], # background for current screen tab
-          ["#ffffff"], # font color for group names
-          ["#FF7171"], # border line color for current tab
-          ["#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#6886C5"], # color for the 'even widgets'
-          ["#ff5131"], # window name
-          ["#92967D"]] # foreground for inactive screens
+colors = [["#383E56"],  # panel background
+          ["#3d3f4b"],  # background for current screen tab
+          ["#ffffff"],  # font color for group names
+          ["#FF7171"],  # border line color for current tab
+          ["#74438f"],  # border line color for 'other tabs' and color for 'odd widgets'
+          ["#6886C5"],  # color for the 'even widgets'
+          ["#ff5131"],  # window name
+          ["#92967D"]]  # foreground for inactive screens
 
 group_names = [(" NET", {'layout': 'monadtall'}),
                (" DEV", {'layout': 'monadtall'}),
@@ -88,13 +90,14 @@ group_names = [(" NET", {'layout': 'monadtall'}),
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
 for i, (name, kwargs) in enumerate(group_names, 1):
-    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))        # Switch to another group
+    # Switch to another group
+    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
 layouts = [
-    layout.MonadTall(border_focus='CD5D7D',border_width=2,margin=5),
-    layout.MonadWide(bborder_focus='CD5D7D',order_width=1,margin=5),
-    layout.Matrix(border_focus='CD5D7D',order_width=1,margin=5),
+    layout.MonadTall(border_focus='CD5D7D', border_width=2, margin=5),
+    layout.MonadWide(bborder_focus='CD5D7D', order_width=1, margin=5),
+    layout.Matrix(border_focus='CD5D7D', order_width=1, margin=5),
     layout.Max(),
 ]
 
@@ -111,40 +114,40 @@ screens = [
         top=bar.Bar(
             [
                 widget.Sep(
-                       linewidth = 0,
-                       padding = 6,
-                       foreground = colors[2],
-                       background = colors[0]
-                       ),
+                    linewidth=0,
+                    padding=6,
+                    foreground=colors[2],
+                    background=colors[0]
+                ),
                 widget.GroupBox(
-                    fontsize = 12,
-                    margin_y = 3,
-                    margin_x = 0,
-                    padding_y = 5,
-                    padding_x = 3,
-                    borderwidth = 3,
-                    active = colors[2],
-                    inactive = colors[7],
-                    rounded = False,
-                    highlight_color = colors[1],
-                    highlight_method = "line",
-                    this_current_screen_border = colors[6],
-                    this_screen_border = colors [4],
-                    other_current_screen_border = colors[6],
-                    other_screen_border = colors[4],
-                    foreground = colors[2],
-                    background = colors[0]
-                    ),
+                    fontsize=12,
+                    margin_y=3,
+                    margin_x=0,
+                    padding_y=5,
+                    padding_x=3,
+                    borderwidth=3,
+                    active=colors[2],
+                    inactive=colors[7],
+                    rounded=False,
+                    highlight_color=colors[1],
+                    highlight_method="line",
+                    this_current_screen_border=colors[6],
+                    this_screen_border=colors[4],
+                    other_current_screen_border=colors[6],
+                    other_screen_border=colors[4],
+                    foreground=colors[2],
+                    background=colors[0]
+                ),
                 widget.Prompt(),
                 widget.Sep(
-                       linewidth = 0,
-                       foreground = colors[2],
-                       background = colors[0]
-                       ),
+                    linewidth=0,
+                    foreground=colors[2],
+                    background=colors[0]
+                ),
                 widget.WindowName(
                     fontsize=12,
                     foreground='CD5D7D'
-                    ),
+                ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -153,26 +156,26 @@ screens = [
                 ),
                 widget.Systray(),
                 widget.Sep(
-                       linewidth = 0,
-                       padding = 8,
-                       foreground = colors[2],
-                       background = colors[0]
-                       ),
+                    linewidth=0,
+                    padding=8,
+                    foreground=colors[2],
+                    background=colors[0]
+                ),
                 widget.TextBox(
-                      text = "",
-                      foreground='A1CAE2',
-                       padding = 0
-                       ),
+                    text="",
+                    foreground='A1CAE2',
+                    padding=0
+                ),
                 widget.Volume(
                     foreground='A1CAE2',
                     step=5,
-                    ),
+                ),
                 widget.Clock(
                     foreground='5AA469',
                     format=' %a %d %b %I:%M %p',
-                    ),
+                ),
                 widget.CurrentLayout(background='776D8A'),
-                widget.QuickExit(foreground='CD5D7D'),
+                # widget.QuickExit(foreground='CD5D7D'),
             ],
             24,
         ),
@@ -200,9 +203,9 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(wm_class='Pavucontrol'), # volume control
-    Match(wm_class='Nm-connection-editor'), # volume control
-    Match(wm_class='Lxappearance'), # volume control
+    Match(wm_class='Pavucontrol'),  # volume control
+    Match(wm_class='Nm-connection-editor'),  # volume control
+    Match(wm_class='Lxappearance'),  # volume control
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
 ])
@@ -214,6 +217,7 @@ reconfigure_screens = True
 auto_minimize = True
 
 wmname = "LG3D"
+
 
 @hook.subscribe.startup_once
 def autostart():
