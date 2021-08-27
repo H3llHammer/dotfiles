@@ -15,3 +15,6 @@ super + control + u
 
 super + control + d
     amixer set Capture 5%- &>/dev/null
+
+super + shift + s
+    flameshot gui
