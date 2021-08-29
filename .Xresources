@@ -1,0 +1,8 @@
+# urxvt terminal
+URxvt.background:       black
+URxvt.foreground:       white
+URxvt.cursorColor:      red
+URxvt.underlineColor:   green
+URxvt.font:             xft:JetBrainsMono-Bold:pixelsize=14:antialias=false
+URxvt.boldFont:         xft:JetBrainsMono-ExtraBold:bold:pixelsize=14:antialias=false
+URxvt.title:            Terminal
