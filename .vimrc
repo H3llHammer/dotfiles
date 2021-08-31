@@ -6,6 +6,7 @@ endif
 syntax on		    " Enable syntax highlight
 set encoding=utf-8	    " UTF-8 encoding enabled
 set number		    " Show line numbers
+set relativenumber
 set noswapfile		    " Disabling swap files creation
 set nobackup		    " Disabling backup files
 set hidden		    " Don't show unsaved jobs on the screen
