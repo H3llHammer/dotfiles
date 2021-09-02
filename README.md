@@ -21,8 +21,8 @@
 ![Vim](.screenshots/vim.png)
 
 - [vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager
-- vim-airline - vim-airline-themes - nerdtree
 
+  - vim-airline - vim-airline-themes - nerdtree
   - fzf
   - vim-gitgutter
   - floaterm
@@ -80,3 +80,13 @@ Leader: `space`
 - [Nerd Fonts](https://www.nerdfonts.com/) - JetBrainsMono Nerd Font
 
 ## Fish
+
+# Sxhkd
+
+| Shortcut              | Description              |
+| --------------------- | ------------------------ |
+| `super + shift + u`   | Volume up.               |
+| `super + shift + d`   | Volume down.             |
+| `super + control + u` | Microphone up.           |
+| `super + control + d` | Microphone down.         |
+| `super + control + s` | Snapshot with flameshot. |
