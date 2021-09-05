@@ -22,7 +22,8 @@ export EDITOR=/bin/vim
 export PATH=$HOME/.local/bin:$PATH
 
 alias hibernate="systemctl hibernate"
-alias exa="exa --icons"
+alias ll="exa --icons"
+alias la="exa --icons -la"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
