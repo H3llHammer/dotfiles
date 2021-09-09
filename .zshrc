@@ -22,6 +22,7 @@ export EDITOR=/bin/vim
 export PATH=$HOME/.local/bin:$PATH
 
 alias hibernate="systemctl hibernate"
+alias n3="nnn"
 alias ll="exa --icons"
 alias la="exa --icons -la"
 
