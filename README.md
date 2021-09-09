@@ -9,7 +9,6 @@
 - terminator
 - sxhkd
 - fonts
-- xinit
 
 # Window manager configs
 
@@ -81,8 +80,6 @@ Leader: `space`
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [Nerd Fonts](https://www.nerdfonts.com/) - JetBrainsMono Nerd Font
 
-## Fish
-
 # Sxhkd
 
 | Shortcut              | Description              |
@@ -92,3 +89,14 @@ Leader: `space`
 | `super + control + u` | Microphone up.           |
 | `super + control + d` | Microphone down.         |
 | `super + control + s` | Snapshot with flameshot. |
+
+# Utilities
+
+| Utility   | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| nnn       | Terminal file manager                                          |
+| rofi      | Window switcher and application launcher                       |
+| picom     | Compositor                                                     |
+| nitrogen  | Lightweight desktop background browser and setter for X Window |
+| sxhkd     | Simple X hotkey daemon                                         |
+| flameshot | Screenshot software                                            |
