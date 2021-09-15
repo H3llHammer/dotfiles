@@ -20,11 +20,13 @@ compinit
 
 export EDITOR=/bin/vim
 export PATH=$HOME/.local/bin:$PATH
+export dotfiles=/home/alberto/Documents/dotfiles
 
 alias hibernate="systemctl hibernate"
 alias n="nnn -d"
 alias ll="exa --icons"
 alias la="exa --icons -la"
+alias dot="vim $dotfiles"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
