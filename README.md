@@ -92,11 +92,13 @@ Leader: `space`
 
 # Utilities
 
-| Utility   | Description                                                    |
-| --------- | -------------------------------------------------------------- |
-| nnn       | Terminal file manager                                          |
-| rofi      | Window switcher and application launcher                       |
-| picom     | Compositor                                                     |
-| nitrogen  | Lightweight desktop background browser and setter for X Window |
-| sxhkd     | Simple X hotkey daemon                                         |
-| flameshot | Screenshot software                                            |
+| Utility      | Description                                                    |
+| ------------ | -------------------------------------------------------------- |
+| nnn          | Terminal file manager                                          |
+| Ranger       | Terminal file manager                                          |
+| rofi         | Window switcher and application launcher                       |
+| picom        | Compositor                                                     |
+| nitrogen     | Lightweight desktop background browser and setter for X Window |
+| sxhkd        | Simple X hotkey daemon                                         |
+| flameshot    | Screenshot software                                            |
+| lxappearance | Theme selector                                                 |
