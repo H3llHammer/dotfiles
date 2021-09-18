@@ -2,4 +2,4 @@
 sxhkd &
 nitrogen --restore &
 picom &
-bash /home/alberto/Scripts/dwm-bar.sh &
+~/Scripts/dwmbar.sh &
