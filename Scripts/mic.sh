@@ -1,3 +1,4 @@
+#!/bin/sh
 mic="$(amixer get Capture | grep "Front .*:" | awk '$6 == "[on]" {print "true"}' | uniq)"
 
 if [ $mic -a true ]; then

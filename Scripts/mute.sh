@@ -1,3 +1,4 @@
+#!/bin/sh
 mute="$(amixer get Master | grep "Front .*:" | awk '$6 == "[on]" {print "true"}' | uniq)"
     
 if [ $mute -a true ]; then
