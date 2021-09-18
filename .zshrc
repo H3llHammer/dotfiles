@@ -30,5 +30,8 @@ alias dot="vim $dotfiles"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
