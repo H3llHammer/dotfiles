@@ -1,20 +1,20 @@
 super + shift + m
-   bash /home/alberto/Scripts/mute.sh
+   ~/Scripts/mute.sh; ~/Scripts/refresh.sh
 
 super + control + m
-   bash /home/alberto/Scripts/mic.sh
+   ~/Scripts/mic.sh; ~/Scripts/refresh.sh
 
 super + shift + u
-    amixer set Master 5%+ &>/dev/null
+    amixer set Master 5%+ &>/dev/null; ~/Scripts/refresh.sh
 
 super + shift + d
-    amixer set Master 5%- &>/dev/null
+    amixer set Master 5%- &>/dev/null; ~/Scripts/refresh.sh
 
 super + control + u
-    amixer set Capture 5%+ &>/dev/null
+    amixer set Capture 5%+ &>/dev/null; ~/Scripts/refresh.sh
 
 super + control + d
-    amixer set Capture 5%- &>/dev/null
+    amixer set Capture 5%- &>/dev/null; ~/Scripts/refresh.sh
 
 super + shift + s
     flameshot gui
