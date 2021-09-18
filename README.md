@@ -102,3 +102,4 @@ Leader: `space`
 | sxhkd        | Simple X hotkey daemon                                         |
 | flameshot    | Screenshot software                                            |
 | lxappearance | Theme selector                                                 |
+| sxiv         | Simple X Image Viewer                                          |
