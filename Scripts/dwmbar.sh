@@ -31,5 +31,5 @@ dat()
 while :
 do
     xsetroot -name " $(vol) | $(mic) |  $(kern) |  $(dat) "
-    sleep 1
+    sleep 1m
 done
