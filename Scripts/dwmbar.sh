@@ -35,7 +35,7 @@ mem()
 
 dat()
 {
-    echo $(date "+%A %d %G  %H:%M")
+    echo $(date "+%a %d %G  %H:%M")
 }
 
 while :
