@@ -24,6 +24,7 @@ export dotfiles=/home/alberto/Documents/dotfiles
 
 alias hibernate="systemctl hibernate"
 alias n="nnn -d"
+alias ls="ls --color"
 alias ll="exa --icons"
 alias la="exa --icons -la"
 alias dot="vim $dotfiles"
