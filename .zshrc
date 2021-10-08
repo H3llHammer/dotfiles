@@ -31,24 +31,8 @@ export TERMINAL="st"
 export BROWSER="firefox"
 export PATH=$HOME/.local/bin:$PATH
 
-alias hibernate="systemctl hibernate"
-alias n="nnn -d"
-alias \
-    ll="exa --icons" \
-    la="exa --icons -la"
-
-# Verbosity
-alias \
-    cp="cp -iv" \
-    mv="mv -iv" \
-    rm="rm -vI" \
-    mkdir="mkdir -pv"
-
-# Colorize commands when possible.
-alias \
-    ls="ls -hN --color=auto --group-directories-first" \
-    grep="grep --color=auto" \
-    diff="diff --color=auto" \
+# Load aliases
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
