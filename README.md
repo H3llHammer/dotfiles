@@ -77,6 +77,7 @@ Leader: `space`
 
 ![Zsh](.screenshots/zsh.png)
 
+- zsh-syntax-highlighting
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [Nerd Fonts](https://www.nerdfonts.com/) - JetBrainsMono Nerd Font
 
