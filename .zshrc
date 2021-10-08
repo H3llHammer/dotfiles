@@ -7,6 +7,13 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.cache/zsh/history
 
+# Basic tab complete
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)   # Include hidden files
+
 # Default programs
 export EDITOR="vim"
 export TERMINAL="st"
