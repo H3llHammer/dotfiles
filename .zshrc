@@ -32,6 +32,9 @@ alias \
     grep="grep --color=auto" \
     diff="diff --color=auto" \
 
+# Load zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 source /usr/share/fzf/key-bindings.zsh
