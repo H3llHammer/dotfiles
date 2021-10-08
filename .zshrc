@@ -2,16 +2,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-HISTFILE=~/.cache/zsh/history
+# History in cache history
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -e
-
-zstyle :compinstall filename '/home/alberto/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+HISTFILE=~/.cache/zsh/history
 
 # Default programs
 export EDITOR="vim"
