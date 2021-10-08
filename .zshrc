@@ -14,6 +14,10 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)   # Include hidden files
 
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
 # Default programs
 export EDITOR="vim"
 export TERMINAL="st"
