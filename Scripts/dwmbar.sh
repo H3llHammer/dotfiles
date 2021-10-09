@@ -7,7 +7,7 @@ vol()
 
 mic()
 {
-    echo $(amixer get Capture | awk '/Front Left:/ { if ( $6 == "[on]" ) print " " $5; else print " " $6 }' | tr -d "[]")
+    echo $(amixer get Capture | awk '/Front Left:/ { if ( $6 == "[on]" ) print " " $5; else print "^c#FF0000^ " $6"^d^" }' | tr -d "[]")
 }
 
 kern()
