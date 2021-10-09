@@ -37,4 +37,4 @@ fi
 #picom &
 exec dwm
 
-xrdb -merge ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
