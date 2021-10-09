@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Refresh the dwm bar
 
