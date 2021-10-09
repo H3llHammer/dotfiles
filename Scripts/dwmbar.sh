@@ -27,6 +27,6 @@ dat()
 
 while :
 do
-    xsetroot -name " $(vol) | $(mic) |  $(kern) | $(dat) "
+    xsetroot -name " $(vol) | $(mic) |  $(kern) | ^c#5EAAA8^$(dat)^d^ "
     sleep 1m
 done
