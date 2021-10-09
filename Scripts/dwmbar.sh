@@ -2,12 +2,12 @@
 
 vol()
 {
-    echo $(amixer get Master | awk ' /Front Left:/ { if ( $6 == "[on]" ) print " " $5; else print "^c#FF0000^婢 " $6"^d^" }' | tr -d "[]")
+    echo $(amixer get Master | awk ' /Front Left:/ { if ( $6 == "[on]" ) print "^c#6886C5^ " $5"^d^"; else print "^c#FF0000^婢 " $6"^d^" }' | tr -d "[]")
 }
 
 mic()
 {
-    echo $(amixer get Capture | awk '/Front Left:/ { if ( $6 == "[on]" ) print " " $5; else print "^c#FF0000^ " $6"^d^" }' | tr -d "[]")
+    echo $(amixer get Capture | awk '/Front Left:/ { if ( $6 == "[on]" ) print "^c#6886C5^ " $5"^d^"; else print "^c#FF0000^ " $6"^d^" }' | tr -d "[]")
 }
 
 kern()
