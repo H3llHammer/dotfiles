@@ -34,6 +34,8 @@ set noruler		    " Don't show current row and column
 set shortmess+=F	    " Don't give the file info when editing a file 
 set noshowcmd		    " Don't show command status
 
+colorscheme industry
+
 "" Variables
 " Map leader
 let mapleader = " "				" Set space as map leader
