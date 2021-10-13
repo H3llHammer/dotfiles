@@ -84,6 +84,10 @@ hi Visual cterm=none ctermbg=darkgrey ctermfg=cyan
     map <leader>w :w<CR>
     " Close without save
     map <leader>! :q!<CR>
+" Copy and paste with system clipboard
+    inoremap <C-v> <ESC>"+pa
+    vnoremap <C-c> "+y
+    vnoremap <C-d> "+d
 " Buffers
     " Switch between buffers 
     map <S-Tab> :bn<CR>
