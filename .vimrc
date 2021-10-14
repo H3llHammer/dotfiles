@@ -44,7 +44,7 @@ let g:loaded_matchparen=1
 " Airline
 let g:airline_powerline_fonts = 1		" Enabled powerline symbols
 let g:airline#extensions#tabline#enabled = 1	" Display a tab line at the top containing the name of all open buffers
-let g:airline_theme='angr'	" Set the airline theme
+let g:airline_theme='jellybeans'	" Set the airline theme
 " FZF
 let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
