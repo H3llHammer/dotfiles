@@ -34,7 +34,7 @@ set noruler		    " Don't show current row and column
 set shortmess+=F	    " Don't give the file info when editing a file 
 set noshowcmd		    " Don't show command status
 
-colorscheme industry
+colorscheme onedark
 
 "" Variables
 " Map leader

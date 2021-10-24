@@ -44,4 +44,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 Plug 'honza/vim-snippets'
 
+Plug 'joshdick/onedark.vim'
+
 call plug#end()
