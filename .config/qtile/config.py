@@ -72,7 +72,7 @@ keys = [
     EzKey("M-p", lazy.spawn("pavucontrol")),
 ]
 
-colors = [["#383E56"],  # panel background
+colors = [["#282C34"],  # panel background
           ["#3d3f4b"],  # background for current screen tab
           ["#ffffff"],  # font color for group names
           ["#FF7171"],  # border line color for current tab
