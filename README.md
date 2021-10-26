@@ -13,7 +13,7 @@
 # Window manager configs
 
 - [dwm](https://github.com/H3llHammer/dwm)
-- [qtile](https://github.com/H3llHammer/dotfiles/tree/main/.config/qtile) Deprecated
+- [qtile](https://github.com/H3llHammer/dotfiles/tree/main/.config/qtile)
 
 # Vim setup
 
