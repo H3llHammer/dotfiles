@@ -28,6 +28,14 @@ keys = [
     EzKey("M-<space>", lazy.layout.next(),
           desc="Move window focus to other window"),
 
+    # Switch between groups
+    EzKey("M-S-n", lazy.screen.next_group(),
+          desc="Move to the group on the right"),
+    EzKey("M-S-p", lazy.screen.prev_group(),
+          desc="Move to the group on the left"),
+    EzKey("M-<Tab>", lazy.screen.toggle_group(),
+          desc="Move to the last visited group"),
+
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     EzKey("M-S-h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -53,7 +61,7 @@ keys = [
     EzKey("M-<Return>", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
-    EzKey("M-<Tab>", lazy.next_layout(), desc="Toggle between layouts"),
+    EzKey("M-S-<Tab>", lazy.next_layout(), desc="Toggle between layouts"),
     EzKey("M-w", lazy.window.kill(), desc="Kill focused window"),
     EzKey("M-f", lazy.window.toggle_fullscreen(),
           desc="Put the focused window to/from fullscreen mode"),
