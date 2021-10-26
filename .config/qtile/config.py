@@ -114,9 +114,9 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
 layouts = [
-    layout.MonadTall(border_focus='CD5D7D', border_width=2, margin=5),
-    layout.MonadWide(bborder_focus='CD5D7D', order_width=1, margin=5),
-    layout.Matrix(border_focus='CD5D7D', order_width=1, margin=5),
+    layout.MonadTall(border_focus=one_dark[1], border_width=2, margin=5),
+    layout.MonadWide(bborder_focus=one_dark[1], order_width=1, margin=5),
+    layout.Matrix(border_focus=one_dark[1], order_width=1, margin=5),
     layout.Max(),
 ]
 
@@ -124,7 +124,7 @@ widget_defaults = dict(
     font='jetbrains mono bold',
     fontsize=14,
     padding=8,
-    background=colors[0]
+    background=one_dark[0]
 )
 extension_defaults = widget_defaults.copy()
 
@@ -165,7 +165,7 @@ screens = [
                 ),
                 widget.WindowName(
                     fontsize=12,
-                    foreground='CD5D7D'
+                    foreground=one_dark[1]
                 ),
                 widget.Chord(
                     chords_colors={
@@ -182,15 +182,15 @@ screens = [
                 ),
                 widget.TextBox(
                     text="",
-                    foreground='A1CAE2',
+                    foreground=one_dark[4],
                     padding=0
                 ),
                 widget.Volume(
-                    foreground='A1CAE2',
+                    foreground=one_dark[4],
                     step=5,
                 ),
                 widget.Clock(
-                    foreground='5AA469',
+                    foreground=one_dark[2],
                     format=' %a %d %b %I:%M %p',
                 ),
                 widget.CurrentLayout(background='776D8A'),
