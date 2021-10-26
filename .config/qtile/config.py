@@ -74,7 +74,7 @@ keys = [
 
     # Hotkeys
     EzKey("M-d", lazy.spawn("rofi -show drun -show-icons -icon-theme Papirus")),
-    EzKey("M-S-e", lazy.spawn(terminal + " -e nnn")),
+    EzKey("M-S-e", lazy.spawn(terminal + " -e nnn -d")),
     EzKey("M-e", lazy.spawn("thunar")),
     EzKey("M-S-s", lazy.spawn("flameshot gui")),
     EzKey("M-p", lazy.spawn("pavucontrol")),
@@ -223,8 +223,9 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(wm_class='Pavucontrol'),  # volume control
-    Match(wm_class='Nm-connection-editor'),  # volume control
-    Match(wm_class='Lxappearance'),  # volume control
+    Match(wm_class='PacketTracer'),
+    Match(wm_class='sxiv'),
+    Match(wm_class='Lxappearance'),
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
 ])
