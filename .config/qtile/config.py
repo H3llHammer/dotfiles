@@ -102,6 +102,7 @@ one_dark = [["#282C34"],  # black
 group_names = [(" NET", {'layout': 'monadtall'}),
                (" DEV", {'layout': 'monadtall'}),
                (" TERM", {'layout': 'monadtall'}),
+               (" VIRT", {'layout': 'monadtall'}),
                (" SYS", {'layout': 'monadtall'}),
                (" MAIL", {'layout': 'monadtall'}),
                ]
