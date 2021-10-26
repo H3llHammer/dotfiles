@@ -89,6 +89,16 @@ colors = [["#282C34"],  # panel background
           ["#ff5131"],  # window name
           ["#92967D"]]  # foreground for inactive screens
 
+# One dark colors
+one_dark = [["#282C34"],  # black
+            ["#E06c75"],  # red
+            ["#98C379"],  # green
+            ["#E5C07B"],  # yellow
+            ["#61AFEF"],  # blue
+            ["#C678DD"],  # magenta
+            ["#56B6C2"],  # cyan
+            ["#ABB2BF"]]  # white
+
 group_names = [(" NET", {'layout': 'monadtall'}),
                (" DEV", {'layout': 'monadtall'}),
                (" TERM", {'layout': 'monadtall'}),
