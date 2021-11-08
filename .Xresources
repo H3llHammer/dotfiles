@@ -20,3 +20,5 @@ URxvt.iso14755_52: false
 URxvt.keysym.Control-Meta-c: builtin-string:
 URxvt.keysym.Control-Meta-v: builtin-string:
  
+! scrollbar position - left=false (default) or right=true
+URxvt*scrollBar_right: true
