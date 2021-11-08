@@ -1,3 +1,5 @@
+#include "/home/alberto/Documents/Xresources-themes/one-dark.Xresources"
+
 URxvt.buffered:         true
 ! Appearance
 URxvt.background:       #171717 
