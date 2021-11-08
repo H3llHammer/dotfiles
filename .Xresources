@@ -1,0 +1,20 @@
+URxvt.buffered:         true
+! Appearance
+URxvt.background:       #171717 
+URxvt.foreground:       white
+URxvt.cursorColor:      #FF4C29
+URxvt.underlineColor:   #D89216
+URxvt.font:             xft:JetBrains Mono NL:Regular:pixelsize=15,xft:MesloLGS NF:Regular:pixelsize=15
+URxvt.boldFont:         xft:JetBrains Mono NL:Bold:pixelsize=15,xft:MesloLGS NF:Bold:pixelsize=15
+URxvt.title:            urxvt
+URxvt*scrollstyle:	plain
+
+! Restore Ctrl+Shift+(c|v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+ 
