@@ -27,7 +27,7 @@ bindkey -v '^?' backward-delete-char
 
 # Default programs
 export EDITOR="vim"
-export TERMINAL="st"
+export TERMINAL="urxvt"
 export BROWSER="firefox"
 export PATH=$HOME/.local/bin:$PATH
 
