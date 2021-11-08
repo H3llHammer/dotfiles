@@ -123,7 +123,7 @@ layouts = [
 
 widget_defaults = dict(
     font='jetbrains mono bold',
-    fontsize=14,
+    fontsize=12,
     padding=8,
     background=one_dark[0]
 )
@@ -237,7 +237,8 @@ reconfigure_screens = True
 
 auto_minimize = True
 
-wmname = "LG3D"
+#wmname = "LG3D"
+wmname = "qtile"
 
 
 @hook.subscribe.startup_once
