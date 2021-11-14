@@ -36,7 +36,8 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Load zsh-syntax-highlighting
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null || \
+    source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh 2>/dev/null
 
 [[ -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
