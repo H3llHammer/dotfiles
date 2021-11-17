@@ -22,3 +22,14 @@ URxvt.keysym.Control-Meta-v: builtin-string:
  
 ! scrollbar position - left=false (default) or right=true
 URxvt*scrollBar_right: true
+
+! keys for change font size
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+
+URxvt.resize-font.step: 2
+
+! extensions
+urxvt.perl-ext-common: resize-font
