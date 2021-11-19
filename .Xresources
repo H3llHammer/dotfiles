@@ -32,4 +32,4 @@ URxvt.keysym.C-question:  resize-font:show
 URxvt.resize-font.step: 2
 
 ! extensions
-urxvt.perl-ext-common: resize-font
+urxvt.perl-ext-common: default,resize-font
