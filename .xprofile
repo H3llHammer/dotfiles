@@ -1,4 +1,0 @@
-sxhkd &
-nitrogen --restore &
-picom &
-xrandr -s 1440x900 &
