@@ -14,10 +14,11 @@ run "xrandr -s 1440x900"
 #run "blueberry-tray"
 #run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 #run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+. ~/Documents/dwm/scripts/dwmbar.sh &
 picom &
-run "numlockx on"
-run "volumeicon"
-run slstatus &
+#run "numlockx on &"
+#run "volumeicon &"
+#run slstatus &
 sxhkd -c ~/Documents/dwm/sxhkd/sxhkdrc &
-run "nitrogen --restore"
+run "nitrogen --restore &"
 
