@@ -19,6 +19,10 @@ import XMonad.Layout.ResizableTile
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+-- Terminal
+myTerminal :: String
+myTerminal = "urxvt"
+
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
@@ -219,7 +223,7 @@ main = do
     xmproc <- spawnPipe "xmobar -x 0 /home/alberto/.config/xmobar/xmobarrc"
     xmonad $ docks def {
       -- simple stuff
-        terminal           = "urxvt",
+        terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
         clickJustFocuses   = myClickJustFocuses,
         borderWidth        = myBorderWidth,
