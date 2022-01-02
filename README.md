@@ -6,14 +6,16 @@
 - shell config
 - tmux config
 - rofi config
-- terminator
-- sxhkd
+- urxvt
 - fonts
 
 # Window manager configs
 
 - [dwm](https://github.com/H3llHammer/dwm)
 - [qtile](https://github.com/H3llHammer/dotfiles/tree/main/.config/qtile)
+- [xmonad](https://github.com/H3llHammer/dotfiles/tree/main/.xmonad)
+
+![xmonad](.screenshots/xmonad.png)
 
 # Vim setup
 
@@ -81,16 +83,6 @@ Leader: `space`
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [Nerd Fonts](https://www.nerdfonts.com/) - JetBrainsMono Nerd Font
 
-# Sxhkd
-
-| Shortcut              | Description              |
-| --------------------- | ------------------------ |
-| `super + shift + u`   | Volume up.               |
-| `super + shift + d`   | Volume down.             |
-| `super + control + u` | Microphone up.           |
-| `super + control + d` | Microphone down.         |
-| `super + control + s` | Snapshot with flameshot. |
-
 # Utilities
 
 | Utility      | Description                                                    |
@@ -104,3 +96,4 @@ Leader: `space`
 | flameshot    | Screenshot software                                            |
 | lxappearance | Theme selector                                                 |
 | sxiv         | Simple X Image Viewer                                          |
+| urxvt        | Terminal emulator                                              |
