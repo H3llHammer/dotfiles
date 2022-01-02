@@ -1,11 +1,11 @@
-Config { font = "xft:JetBrains Mono NL:Regular:pixelsize=13:antialias=true:hinting=true"
+Config { font = "xft:JetBrains Mono NL:Regular:pixelsize=12:antialias=true:hinting=true"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB
        , bgColor = "#282C34"
        , fgColor = "#ABB2BF"
        , alpha = 255
-       , position = TopW L 90
+       , position = TopSize L 100 24
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -19,11 +19,13 @@ Config { font = "xft:JetBrains Mono NL:Regular:pixelsize=13:antialias=true:hinti
                                "--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Com "uname" ["-s","-r"] "" 36000
-                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run Date "%a %b %_d %Y %H:%M" "date" 10
+		    , Run Com ".config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20
+                    -- Prints out the left side items such as workspaces, layout, etc.
 		    , Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%UnsafeStdinReader% }{ | %cpu% | %memory% |\
-                    \ <fc=#ee9a00>%date%</fc>"
+                    \ <fc=#ee9a00>%date%</fc> %trayerpad%"
        }

@@ -15,6 +15,7 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.Grid
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.ResizableTile
+import XMonad.Layout.Renamed
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -61,6 +62,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Take a snapshot with flameshot
     , ((modm .|. shiftMask, xK_s     ), spawn "flameshot gui")
 
+    --
+    , ((modm,               xK_a), sendMessage MirrorShrink)
+    , ((modm,               xK_z), sendMessage MirrorExpand)
+
     -- a basic CycleWS setup
     , ((modm,               xK_Up),  nextWS)
     , ((modm,               xK_Down),    prevWS)
@@ -101,9 +106,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Expand the master area
     , ((modm,               xK_l     ), sendMessage Expand)
 
-    , ((modm,               xK_a), sendMessage MirrorShrink)
-    , ((modm,               xK_z), sendMessage MirrorExpand)
-
     -- Push window back into tiling
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
 
@@ -117,7 +119,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -169,12 +171,19 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 ------------------------------------------------------------------------
 -- Layouts:
-myLayout = avoidStruts (ResizableTall 1 (3/100) (1/2) [] ||| tiled ||| Mirror tiled ||| Full ||| Grid ||| threeCol)
+grid =
+    renamed [Replace "Grid"] $
+    spacingWithEdge 6 $ 
+	Grid
+
+myLayout = avoidStruts $ tiled ||| Full ||| grid ||| threeCol
   where
-     threeCol = ThreeColMid nmaster delta ratio
+     threeCol = renamed [Replace "ThreeCol"] $ spacingWithEdge 6 $ ThreeColMid nmaster delta ratio
 
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
+     tiled   = renamed [Replace "Tiled"] $ 
+	spacingWithEdge 6 $ 
+	ResizableTall nmaster delta ratio []
 
      -- The default number of windows in the master pane
      nmaster = 1
@@ -184,6 +193,7 @@ myLayout = avoidStruts (ResizableTall 1 (3/100) (1/2) [] ||| tiled ||| Mirror ti
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
+
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -210,10 +220,12 @@ myEventHook = mempty
 
 ------------------------------------------------------------------------
 -- Startup hook
+myStartupHook :: X ()
 myStartupHook = do
+	spawnOnce "killall trayer"
 	spawnOnce "nitrogen --restore &"
 	spawnOnce "picom &"
-	spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x282C34 --height 22 --monitor 1 &"
+	spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint       0x282C34 --height 22 --monitor 1 &"
 	spawnOnce "volumeicon &"
 ------------------------------------------------------------------------
 main = do 
@@ -234,7 +246,7 @@ main = do
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = spacing 5 $ myLayout,
+        layoutHook         = myLayout,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
 	logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
