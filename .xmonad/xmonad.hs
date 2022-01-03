@@ -7,6 +7,7 @@ import XMonad.Actions.CycleWS
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.WorkspaceHistory
+import XMonad.Hooks.InsertPosition
 
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
@@ -247,7 +248,7 @@ main = do
 
       -- hooks, layouts
         layoutHook         = myLayout,
-        manageHook         = myManageHook,
+        manageHook         = insertPosition End Newer <+> myManageHook,
         handleEventHook    = myEventHook,
 	logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
 	    { ppOutput  = hPutStrLn xmproc
