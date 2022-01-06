@@ -172,14 +172,14 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 ------------------------------------------------------------------------
 -- Layouts:
-grid =
-    renamed [Replace "Grid"] $
-    spacingWithEdge 6 $ 
-	Grid
 
-myLayout = avoidStruts $ tiled ||| Full ||| grid ||| threeCol
+myLayout = avoidStruts $ tiled ||| Full ||| grid ||| threeCol ||| mirror
   where
      threeCol = renamed [Replace "ThreeCol"] $ spacingWithEdge 6 $ ThreeColMid nmaster delta ratio
+
+     grid     = renamed [Replace "Grid"] $ spacingWithEdge 6 $  Grid
+
+     mirror   = renamed [Replace "Mirror"] $ spacingWithEdge 6 $ Mirror (Tall 1 (3/100) (3/5))
 
      -- default tiling algorithm partitions the screen into two panes
      tiled   = renamed [Replace "Tiled"] $ 
