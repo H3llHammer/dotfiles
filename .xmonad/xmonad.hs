@@ -3,6 +3,7 @@ import Data.Monoid
 import System.Exit
 
 import XMonad.Actions.CycleWS
+import XMonad.Actions.CycleWorkspaceByScreen
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
@@ -45,7 +46,6 @@ myFocusedBorderColor = "#94B3FD"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
---
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
@@ -63,13 +63,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Take a snapshot with flameshot
     , ((modm .|. shiftMask, xK_s     ), spawn "flameshot gui")
 
-    --
+    -- ResizableTall
     , ((modm,               xK_a), sendMessage MirrorShrink)
     , ((modm,               xK_z), sendMessage MirrorExpand)
 
     -- a basic CycleWS setup
     , ((modm,               xK_Up),  nextWS)
     , ((modm,               xK_Down),    prevWS)
+
+    -- CycleWorkspaceByScreen
+    , ((modm, xK_Tab), cycleWorkspaceOnCurrentScreen [xK_Super_L] xK_Tab xK_grave)
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -81,7 +84,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_n     ), refresh)
 
     -- Move focus to the next window
-    , ((modm,               xK_Tab   ), windows W.focusDown)
+    --, ((modm,               xK_Tab   ), windows W.focusDown)
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
