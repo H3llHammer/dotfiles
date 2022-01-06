@@ -68,8 +68,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_z), sendMessage MirrorExpand)
 
     -- a basic CycleWS setup
-    , ((modm,               xK_Up),  nextWS)
-    , ((modm,               xK_Down),    prevWS)
+    , ((modm,               xK_i),    nextWS)
+    , ((modm,               xK_u),    prevWS)
 
     -- CycleWorkspaceByScreen
     , ((modm, xK_Tab), cycleWorkspaceOnCurrentScreen [xK_Super_L] xK_Tab xK_grave)
@@ -84,7 +84,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_n     ), refresh)
 
     -- Move focus to the next window
-    --, ((modm,               xK_Tab   ), windows W.focusDown)
+    --, ((modm,             xK_Tab   ), windows W.focusDown)
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
