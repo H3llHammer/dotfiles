@@ -16,7 +16,7 @@ Config { font = "xft:JetBrains Mono NL:Regular:pixelsize=12:antialias=true:hinti
        , allDesktops = True
        , overrideRedirect = True
        , commands = [ Run Cpu ["-L","3","-H","50",
-                               "--normal","green","--high","red"] 10
+                               "--normal","#A4D4AE","--high","#D45D79"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Com "uname" ["-s","-r"] "" 36000
                     , Run Date "%a %b %_d %Y %H:%M" "date" 10
@@ -26,6 +26,11 @@ Config { font = "xft:JetBrains Mono NL:Regular:pixelsize=12:antialias=true:hinti
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%UnsafeStdinReader% }{ | %cpu% | %memory% |\
-                    \ <fc=#ee9a00>%date%</fc> %trayerpad%"
+       , template = "%UnsafeStdinReader% }{\
+		    \<fc=#30475E>|</fc>\
+		    \ <fc=#60A9A6>%cpu%</fc>\
+		    \ <fc=#9EA9F0>%memory%</fc>\
+                    \ <fc=#E2C275>%date%</fc>\
+		    \<fc=#30475E>|</fc>\
+		    \%trayerpad%"
        }

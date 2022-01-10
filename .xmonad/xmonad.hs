@@ -255,14 +255,14 @@ main = do
         handleEventHook    = myEventHook,
 	logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
 	    { ppOutput  = hPutStrLn xmproc
-	    , ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]" -- Current workspace in xmobar
-	    , ppVisible = xmobarColor "#98be65" ""		  -- Visible but not current workspace
-	    , ppHidden  = xmobarColor "#82AAFF" "" . wrap "°" ""  -- Hidden workspaces in xmobar
-	    , ppHiddenNoWindows = xmobarColor "#c792ea" ""	  -- Hidden workspaces (no windows)
-	    , ppLayout  = xmobarColor "#B97A95" ""
-	    , ppTitle = xmobarColor "#98be65" "" . shorten 60     -- Title of active window in xmobar
-	    , ppSep   = "<fc=#666666> <fn=1>|</fn> </fc>"         -- Separators in xmobar
-	    , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
+	    , ppCurrent = xmobarColor "#D68060" "" . wrap "[" "]"  -- Current workspace in xmobar
+	    , ppVisible = xmobarColor "#98be65" ""		   -- Visible but not current workspace
+	    , ppHidden  = xmobarColor "#949CDF" "" . wrap "°" ""   -- Hidden workspaces in xmobar
+	    , ppHiddenNoWindows = xmobarColor "#A7C5EB" ""	   -- Hidden workspaces (no windows)
+	    , ppLayout  = xmobarColor "#8675A9" ""                 -- Layout name
+	    , ppTitle   = xmobarColor "#BC658D" "" . shorten 80    -- Title of active window in xmobar
+	    , ppSep     = "<fc=#30475E> <fn=1>|</fn> </fc>"        -- Separators in xmobar
+	    , ppUrgent  = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
 	    }
         ,startupHook        = myStartupHook
     }
