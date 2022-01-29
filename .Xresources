@@ -8,8 +8,8 @@ urxvt*background: rgba:0000/0000/0200/c800
 URxvt.foreground:       white
 URxvt.cursorColor:      #FF4C29
 URxvt.underlineColor:   #D89216
-URxvt.font:             xft:JetBrains Mono NL:Regular:pixelsize=15,xft:MesloLGS NF:Regular:pixelsize=15
-URxvt.boldFont:         xft:JetBrains Mono NL:Bold:pixelsize=15,xft:MesloLGS NF:Bold:pixelsize=15
+URxvt.font:             xft:JetBrains Mono NL:Regular:pixelsize=16,xft:MesloLGS NF:Regular:pixelsize=15
+URxvt.boldFont:         xft:JetBrains Mono NL:Bold:pixelsize=16,xft:MesloLGS NF:Bold:pixelsize=15
 URxvt.title:            urxvt
 URxvt*scrollstyle:	plain
 
