@@ -2,14 +2,12 @@ import os
 import subprocess
 
 from typing import List  # noqa: F401
-
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, EzKey, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-#terminal = guess_terminal()
 terminal = "urxvt"
 
 # modifier_keys = {
@@ -29,9 +27,9 @@ keys = [
           desc="Move window focus to other window"),
 
     # Switch between groups
-    EzKey("M-S-n", lazy.screen.next_group(),
+    EzKey("M-i", lazy.screen.next_group(),
           desc="Move to the group on the right"),
-    EzKey("M-S-p", lazy.screen.prev_group(),
+    EzKey("M-u", lazy.screen.prev_group(),
           desc="Move to the group on the left"),
     EzKey("M-<Tab>", lazy.screen.toggle_group(),
           desc="Move to the last visited group"),
@@ -70,7 +68,6 @@ keys = [
 
     EzKey("M-C-r", lazy.restart(), desc="Restart Qtile"),
     EzKey("M-C-q", lazy.shutdown(), desc="Shutdown Qtile"),
-    EzKey("M-r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # Hotkeys
     EzKey("M-d", lazy.spawn("rofi -show drun -show-icons -icon-theme Papirus")),
@@ -78,6 +75,7 @@ keys = [
     EzKey("M-e", lazy.spawn("thunar")),
     EzKey("M-S-s", lazy.spawn("flameshot gui")),
     EzKey("M-p", lazy.spawn("pavucontrol")),
+    EzKey("M-r", lazy.spawn("dmenu_run -p 'Arch Linux' -fn 'JetBrains Mono NL:Regular:pixelsize=14'"))
 ]
 
 colors = [["#282C34"],  # panel background
@@ -99,7 +97,8 @@ one_dark = [["#282C34"],  # black
             ["#56B6C2"],  # cyan
             ["#ABB2BF"]]  # white
 
-group_names = [(" NET", {'layout': 'monadtall'}),
+group_names = [(" ARCH", {'layout': 'monadtall'}),
+               (" NET", {'layout': 'monadtall'}),
                (" DEV", {'layout': 'monadtall'}),
                (" TERM", {'layout': 'monadtall'}),
                (" VIRT", {'layout': 'monadtall'}),
@@ -115,15 +114,15 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
 layouts = [
-    layout.MonadTall(border_focus=one_dark[1], border_width=2, margin=5),
-    layout.MonadWide(bborder_focus=one_dark[1], order_width=1, margin=5),
-    layout.Matrix(border_focus=one_dark[1], order_width=1, margin=5),
+    layout.MonadTall(border_focus=one_dark[1], border_width=1, margin=10),
+    layout.MonadWide(bborder_focus=one_dark[1], order_width=1, margin=10),
+    layout.Matrix(border_focus=one_dark[1], order_width=1, margin=10),
     layout.Max(),
 ]
 
 widget_defaults = dict(
     font='jetbrains mono bold',
-    fontsize=12,
+    fontsize=11,
     padding=8,
     background=one_dark[0]
 )
@@ -135,7 +134,6 @@ screens = [
             [
                 widget.Sep(
                     linewidth=0,
-                    padding=6,
                     foreground=colors[2],
                     background=colors[0]
                 ),
@@ -158,7 +156,6 @@ screens = [
                     foreground=colors[2],
                     background=colors[0]
                 ),
-                widget.Prompt(),
                 widget.Sep(
                     linewidth=0,
                     foreground=colors[2],
@@ -181,21 +178,35 @@ screens = [
                     foreground=colors[2],
                     background=colors[0]
                 ),
+                widget.CPUGraph(),
+                widget.Memory(),
                 widget.TextBox(
                     text="",
+                    fontsize=20,
                     foreground=one_dark[4],
                     padding=0
                 ),
                 widget.Volume(
                     foreground=one_dark[4],
                     step=5,
+                    channel='Master',
+                ),
+                widget.TextBox(
+                    text="",
+                    fontsize=15,
+                    foreground=one_dark[5],
+                    padding=0
+                ),
+                widget.Volume(
+                    foreground=one_dark[5],
+                    step=5,
+                    channel='Capture',
                 ),
                 widget.Clock(
                     foreground=one_dark[2],
-                    format=' %a %d %b %I:%M %p',
+                    format='%a %d %b %I:%M %p',
                 ),
                 widget.CurrentLayout(background='776D8A'),
-                # widget.QuickExit(foreground='CD5D7D'),
             ],
             24,
         ),
