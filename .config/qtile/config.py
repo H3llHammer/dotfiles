@@ -98,10 +98,13 @@ one_dark = [["#282C34"],  # black
             ["#ABB2BF"]]  # white
 
 group_names = [(" ARCH", {'layout': 'monadtall'}),
-               (" NET", {'layout': 'monadtall'}),
+               (" NET", {
+                   'layout': 'monadtall',
+                   'matches': [Match(wm_class=('firefox',))],
+               }),
                (" DEV", {'layout': 'monadtall'}),
                (" TERM", {'layout': 'monadtall'}),
-               (" VIRT", {'layout': 'monadtall'}),
+               (" VIRT", {'layout': 'monadtall'}),
                (" SYS", {'layout': 'monadtall'}),
                (" MAIL", {'layout': 'monadtall'}),
                ]
@@ -138,7 +141,7 @@ screens = [
                     background=colors[0]
                 ),
                 widget.GroupBox(
-                    fontsize=12,
+                    fontsize=14,
                     margin_y=3,
                     margin_x=0,
                     padding_y=5,
