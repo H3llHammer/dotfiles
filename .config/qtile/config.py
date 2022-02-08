@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from typing import List  # noqa: F401
+from typing import List
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, EzKey, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -78,35 +78,36 @@ keys = [
     EzKey("M-r", lazy.spawn("dmenu_run -p 'Arch Linux' -fn 'JetBrains Mono NL:Regular:pixelsize=14'"))
 ]
 
-colors = [["#282C34"],  # panel background
-          ["#3d3f4b"],  # background for current screen tab
-          ["#ffffff"],  # font color for group names
-          ["#FF7171"],  # border line color for current tab
-          ["#74438f"],  # border line color for 'other tabs' and color for 'odd widgets'
-          ["#6886C5"],  # color for the 'even widgets'
-          ["#ff5131"],  # window name
-          ["#92967D"]]  # foreground for inactive screens
+colors = [["#282C34"],  # 0 panel background
+          ["#3d3f4b"],  # 1 background for current screen tab
+          ["#ffffff"],  # 2 font color for group names (White)
+          ["#FF7171"],  # 3 border line color for current tab
+          ["#74438f"],  # 4 border line color for 'other tabs' and color for 'odd widgets'
+          ["#6886C5"],  # 5 color for the 'even widgets'
+          ["#ff5131"],  # 6 window name
+          ["#92967D"],  # 7 foreground for inactive screens
+          ["#32E0C4"]]  # 8 Mint
 
 # One dark colors
-one_dark = [["#282C34"],  # black
-            ["#E06c75"],  # red
-            ["#98C379"],  # green
-            ["#E5C07B"],  # yellow
-            ["#61AFEF"],  # blue
-            ["#C678DD"],  # magenta
-            ["#56B6C2"],  # cyan
-            ["#ABB2BF"]]  # white
+one_dark = [["#282C34"],  # 0 black
+            ["#E06c75"],  # 1 red
+            ["#98C379"],  # 2 green
+            ["#E5C07B"],  # 3 yellow
+            ["#61AFEF"],  # 4 blue
+            ["#C678DD"],  # 5 magenta
+            ["#56B6C2"],  # 6 cyan
+            ["#ABB2BF"]]  # 7 white
 
-group_names = [(" ARCH", {'layout': 'monadtall'}),
-               (" NET", {
+group_names = [("", {'layout': 'monadtall'}),
+               ("", {
                    'layout': 'monadtall',
                    'matches': [Match(wm_class=('firefox',))],
                }),
-               (" DEV", {'layout': 'monadtall'}),
-               (" TERM", {'layout': 'monadtall'}),
-               (" VIRT", {'layout': 'monadtall'}),
-               (" SYS", {'layout': 'monadtall'}),
-               (" MAIL", {'layout': 'monadtall'}),
+               ("", {'layout': 'monadtall'}),
+               ("", {'layout': 'monadtall'}),
+               ("", {'layout': 'monadtall'}),
+               ("", {'layout': 'monadtall'}),
+               ("", {'layout': 'monadtall'}),
                ]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
@@ -124,10 +125,10 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='jetbrains mono bold',
-    fontsize=11,
+    font='JetBrains Mono NL:style=Bold',
+    fontsize=12,
     padding=8,
-    background=one_dark[0]
+    background=one_dark[0],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -141,18 +142,19 @@ screens = [
                     background=colors[0]
                 ),
                 widget.GroupBox(
-                    fontsize=14,
+                    fontsize=23,
                     margin_y=3,
                     margin_x=0,
-                    padding_y=5,
-                    padding_x=3,
+                    padding_y=6,
+                    padding_x=6,
                     borderwidth=3,
                     active=colors[2],
                     inactive=colors[7],
                     rounded=False,
                     highlight_color=colors[1],
                     highlight_method="line",
-                    this_current_screen_border=colors[6],
+                    # this_current_screen_border=colors[6],#line
+                    this_current_screen_border=colors[8],  # line
                     this_screen_border=colors[4],
                     other_current_screen_border=colors[6],
                     other_screen_border=colors[4],
@@ -240,6 +242,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='Pavucontrol'),  # volume control
     Match(wm_class='PacketTracer'),
     Match(wm_class='sxiv'),
+    Match(wm_class='xdman-Main'),
     Match(wm_class='Lxappearance'),
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
