@@ -1,5 +1,5 @@
 alias hibernate="systemctl hibernate"
-alias n="nnn -d"
+alias r="ranger"
 alias xcp="xclip -selection clipboard"
 alias \
     ll="exa --icons" \
