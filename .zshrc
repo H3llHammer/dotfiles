@@ -2,13 +2,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Options
+setopt AUTO_CD
+setopt EXTENDED_HISTORY
+
 # History in cache history
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
-
-# Options
-setopt AUTO_CD
 
 # Basic tab complete
 autoload -U compinit
