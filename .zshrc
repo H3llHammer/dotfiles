@@ -5,6 +5,8 @@ fi
 # Options
 setopt AUTO_CD
 setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY # share history across multiple zsh sessions
+setopt APPEND_HISTORY # append to history
 
 # History in cache history
 HISTSIZE=10000
