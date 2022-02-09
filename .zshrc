@@ -7,6 +7,7 @@ setopt AUTO_CD
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY # share history across multiple zsh sessions
 setopt APPEND_HISTORY # append to history
+setopt INC_APPEND_HISTORY # adds commands as they are typed, not at shell exit
 
 # History in cache history
 HISTSIZE=10000
