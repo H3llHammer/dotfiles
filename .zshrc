@@ -7,6 +7,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
+# Options
+setopt AUTO_CD
+
 # Basic tab complete
 autoload -U compinit
 zstyle ':completion:*' menu select
