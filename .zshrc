@@ -16,7 +16,7 @@ setopt HIST_REDUCE_BLANKS # removes blank lines from history
 # History in cache history
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.zsh_history
 
 # Basic tab complete
 autoload -U compinit
