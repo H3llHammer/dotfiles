@@ -1,12 +1,6 @@
 from libqtile.config import EzKey
 from libqtile.lazy import lazy
 
-#   'M': 'mod4',
-#   'A': 'mod1',
-#   'S': 'shift',
-#   'C': 'control',
-
-mod = "mod4"
 terminal = "urxvt"
 
 keys = [
@@ -44,8 +38,14 @@ keys = [
     EzKey("M-S-f", lazy.window.toggle_floating()),
 
     # Shutdown and Restart
-    EzKey("M-C-r", lazy.restart(), desc="Restart Qtile"),
-    EzKey("M-C-q", lazy.shutdown(), desc="Shutdown Qtile"),
+    EzKey("M-C-r", lazy.restart(),),   # Restart Qtile
+    EzKey("M-C-q", lazy.shutdown(),),  # Shutdown Qtile
+
+    # Media
+    EzKey("M-S-u", lazy.spawn("amixer set Master 5%+")),   # Volume up
+    EzKey("M-S-d", lazy.spawn("amixer set Master 5%-")),   # Volume down
+    EzKey("M-C-u", lazy.spawn("amixer set Capture 5%+")),  # Microphone up
+    EzKey("M-C-d", lazy.spawn("amixer set Capture 5%-")),  # Microphone down
 
     # Hotkeys
     EzKey("M-<Return>", lazy.spawn(terminal)),
