@@ -2,6 +2,7 @@ from libqtile.config import EzKey
 from libqtile.lazy import lazy
 
 terminal = "urxvt"
+mod = "mod4"
 
 keys = [
     # Switch between groups
