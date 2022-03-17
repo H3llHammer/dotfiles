@@ -11,3 +11,13 @@ colors = [["282C34"],  # 0 panel background
           ["3DB2FF"],  # 10 Blue arch linux
           ["FF4848"],  # 11 Red
           ["F0A500"]]  # 12 Orange
+
+# One dark colors
+one_dark = [["#282C34"],  # 0 black
+            ["#E06c75"],  # 1 red
+            ["#98C379"],  # 2 green
+            ["#E5C07B"],  # 3 yellow
+            ["#61AFEF"],  # 4 blue
+            ["#C678DD"],  # 5 magenta
+            ["#56B6C2"],  # 6 cyan
+            ["#ABB2BF"]]  # 7 white
