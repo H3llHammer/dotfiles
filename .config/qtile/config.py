@@ -7,20 +7,13 @@ from libqtile.lazy import lazy
 from settings.keys import mod, keys
 from settings.colors import colors, one_dark
 from settings.groups import groups, group_names
-from settings.screens import screens, Screen
+from settings.screens import screens
+from settings.layouts import layouts
 
 for i, (name, kwargs) in enumerate(group_names, 1):
     # Switch to another group
     keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
-
-layouts = [
-    layout.MonadTall(border_focus=one_dark[1], border_width=1, margin=10),
-    layout.MonadWide(bborder_focus=one_dark[1], order_width=1, margin=10),
-    layout.Matrix(border_focus=one_dark[1], order_width=1, margin=10),
-    layout.Max(),
-    layout.Floating(),
-]
 
 widget_defaults = dict(
     font='JetBrains Mono NL:style=Bold',
@@ -64,9 +57,7 @@ floating_layout = layout.Floating(float_rules=[
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
-
 auto_minimize = True
-
 wmname = "LG3D"
 
 
