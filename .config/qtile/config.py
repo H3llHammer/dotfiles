@@ -1,76 +1,13 @@
 import os
 import subprocess
 
-from typing import List
-from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile import layout, hook, widget, bar
+from libqtile.config import Click, Drag, Key, Screen, Match
 from libqtile.lazy import lazy
 
 from settings.keys import mod, keys
-# from settings.groups import group_names
-
-colors = [["#282C34"],  # 0 panel background
-          ["#3d3f4b"],  # 1 background for current screen tab
-          ["#ffffff"],  # 2 font color for group names (White)
-          ["#FF7171"],  # 3 border line color for current tab
-          ["#74438f"],  # 4 border line color for 'other tabs' and color for 'odd widgets'
-          ["#6886C5"],  # 5 color for the 'even widgets'
-          ["#ff5131"],  # 6 window name
-          ["#92967D"],  # 7 foreground for inactive screens
-          ["#32E0C4"],  # 8 Mint
-          ["#DDDDDD"],  # 9 white variant
-          ["#3DB2FF"],  # 10 Blue arch linux
-          ["#FF4848"],  # 11 Red
-          ["#F0A500"]]  # 12 Orange
-
-# One dark colors
-one_dark = [["#282C34"],  # 0 black
-            ["#E06c75"],  # 1 red
-            ["#98C379"],  # 2 green
-            ["#E5C07B"],  # 3 yellow
-            ["#61AFEF"],  # 4 blue
-            ["#C678DD"],  # 5 magenta
-            ["#56B6C2"],  # 6 cyan
-            ["#ABB2BF"]]  # 7 white
-
-group_names = [
-    ("", {
-        'layout': 'monadtall',
-        'matches': [Match(wm_class=('firefox',))],
-    }),
-    ("", {'layout': 'monadtall'}),
-    ("", {'layout': 'monadtall'}),
-    ("", {'layout': 'monadtall'}),
-    ("", {'layout': 'monadtall'}),
-    ("", {'layout': 'monadtall'}),
-    ("", {
-        'layout': 'monadtall',
-        'matches': [Match(wm_class=('Thunderbird',))],
-    }),
-]
-
-groups = [Group(name, **kwargs) for name, kwargs in group_names]
-
-for i, (name, kwargs) in enumerate(group_names, 1):
-    # Switch to another group
-    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
-    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
-
-layouts = [
-    layout.MonadTall(border_focus=one_dark[1], border_width=1, margin=10),
-    layout.MonadWide(bborder_focus=one_dark[1], order_width=1, margin=10),
-    layout.Matrix(border_focus=one_dark[1], order_width=1, margin=10),
-    layout.Max(),
-    layout.Floating(),
-]
-
-widget_defaults = dict(
-    font='JetBrains Mono NL:style=Bold',
-    fontsize=12,
-    padding=8,
-    background=one_dark[0],
-)
-extension_defaults = widget_defaults.copy()
+from settings.colors import colors, one_dark
+from settings.groups import groups, group_names
 
 screens = [
     Screen(
@@ -223,6 +160,28 @@ screens = [
         ),
     ),
 ]
+
+for i, (name, kwargs) in enumerate(group_names, 1):
+    # Switch to another group
+    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
+    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
+
+layouts = [
+    layout.MonadTall(border_focus=one_dark[1], border_width=1, margin=10),
+    layout.MonadWide(bborder_focus=one_dark[1], order_width=1, margin=10),
+    layout.Matrix(border_focus=one_dark[1], order_width=1, margin=10),
+    layout.Max(),
+    layout.Floating(),
+]
+
+widget_defaults = dict(
+    font='JetBrains Mono NL:style=Bold',
+    fontsize=12,
+    padding=8,
+    background=one_dark[0],
+)
+extension_defaults = widget_defaults.copy()
+
 
 # Drag floating layouts.
 mouse = [
