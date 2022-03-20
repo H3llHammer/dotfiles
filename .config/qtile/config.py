@@ -1,11 +1,11 @@
 import os.path
 import subprocess
-from libqtile import layout, hook, widget, bar
+from libqtile import layout, hook
 from libqtile.config import Click, Drag, Key, Match
 from libqtile.lazy import lazy
 
 from settings.keys import mod, keys
-from settings.colors import colors, one_dark
+from settings.colors import Colors
 from settings.groups import groups, group_names
 from settings.screens import screens
 from settings.layouts import layouts
@@ -19,10 +19,9 @@ widget_defaults = dict(
     font='JetBrains Mono NL:style=Bold',
     fontsize=12,
     padding=8,
-    background=one_dark[0],
+    background=Colors["background"],
 )
 extension_defaults = widget_defaults.copy()
-
 
 # Drag floating layouts.
 mouse = [
