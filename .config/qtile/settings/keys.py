@@ -5,6 +5,9 @@ terminal = "urxvt"
 mod = "mod4"
 
 keys = [
+    # Switch between keyboard layouts
+    EzKey("M-q", lazy.widget["keyboardlayout"].next_keyboard()),
+
     # Switch between groups
     EzKey("M-i", lazy.screen.next_group()),  # Move to the group on the right
     EzKey("M-u", lazy.screen.prev_group()),  # Move to the group on the left
