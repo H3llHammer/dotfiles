@@ -91,6 +91,7 @@ hi Visual cterm=none ctermbg=darkgrey ctermfg=cyan
 " Buffers
     " Switch between buffers 
     map <S-Tab> :bn<CR>
+    map <C-S-Tab> :bn<CR>
     " Switch to next buffer
     map <leader>bn :bn<CR>
     " Switch to previous buffer
