@@ -15,6 +15,7 @@
 - [qtile](https://github.com/H3llHammer/dotfiles/tree/main/.config/qtile)
 - [xmonad](https://github.com/H3llHammer/dotfiles/tree/main/.xmonad)
 
+![qtile](.screenshots/qtile.png)
 ![xmonad](.screenshots/xmonad.png)
 
 # Vim setup
