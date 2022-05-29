@@ -70,20 +70,7 @@ screens = [
                 widget.TextBox(
                     text="\uE0B2",
                     fontsize=22,
-                    foreground="FEC260",
-                    padding=0
-                ),
-                widget.KeyboardLayout(configured_keyboards=[
-                    'latam', 'latam dvorak', 'us dvorak'],
-                    background="FEC260",
-                    foreground="141E61",
-                    padding_x=1,
-                ),
-                widget.TextBox(
-                    text="\uE0B2",
-                    fontsize=22,
                     foreground="4A47A3",
-                    background="FEC260",
                     padding=0
                 ),
                 widget.TextBox(
