@@ -46,8 +46,10 @@ keys = [
     # Media
     EzKey("M-S-u", lazy.spawn("amixer set Master 5%+")),   # Volume up
     EzKey("M-S-d", lazy.spawn("amixer set Master 5%-")),   # Volume down
+    EzKey("M-S-m", lazy.spawn("amixer -D pulse set Master 1+ toggle")),   # Volume down
     EzKey("M-C-u", lazy.spawn("amixer set Capture 5%+")),  # Microphone up
     EzKey("M-C-d", lazy.spawn("amixer set Capture 5%-")),  # Microphone down
+    EzKey("M-C-m", lazy.spawn("amixer -D pulse set Capture 1+ toggle")),  # Microphone down
 
     # Hotkeys
     EzKey("M-<Return>", lazy.spawn(terminal)),
@@ -58,10 +60,12 @@ keys = [
     EzKey("M-p", lazy.spawn("pavucontrol")),
     EzKey("M-r", lazy.spawn("dmenu_run -fn 'JetBrains Mono NL:Bold:pixelsize=16'")),
 
-    # Special keys
-    #EzKey("XF86AudioRaiseVolume", lazy.spawn("amixer set Capture 5%+ &>/dev/null"))
     # Audio
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('amixer set Master 5%+')),
-    Key([], 'XF86AudioLowerVolume', lazy.spawn('amixer set Master 5%-'))
-    #Key([], 'XF86AudioMute', lazy.spawn('amixer set Master 5%-'))
+    Key([], 'XF86AudioLowerVolume', lazy.spawn('amixer set Master 5%-')),
+    Key([], 'XF86AudioMute', lazy.spawn('amixer -D pulse set Master 1+ toggle')),
+    
+    # brightness 
+    Key([], 'XF86MonBrightnessUp', lazy.spawn('xbacklight +10')),
+    Key([], 'XF86MonBrightnessDown', lazy.spawn('xbacklight -10')),
 ]
