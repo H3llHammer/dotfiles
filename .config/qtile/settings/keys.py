@@ -1,7 +1,8 @@
 from libqtile.config import EzKey
+from libqtile.config import Key
 from libqtile.lazy import lazy
 
-terminal = "urxvt"
+terminal = "prime-run alacritty"
 mod = "mod4"
 
 keys = [
@@ -55,5 +56,12 @@ keys = [
     EzKey("M-e", lazy.spawn("thunar")),
     EzKey("M-S-s", lazy.spawn("flameshot gui")),
     EzKey("M-p", lazy.spawn("pavucontrol")),
-    EzKey("M-r", lazy.spawn("dmenu_run -fn 'JetBrains Mono NL:Bold:pixelsize=16'"))
+    EzKey("M-r", lazy.spawn("dmenu_run -fn 'JetBrains Mono NL:Bold:pixelsize=16'")),
+
+    # Special keys
+    #EzKey("XF86AudioRaiseVolume", lazy.spawn("amixer set Capture 5%+ &>/dev/null"))
+    # Audio
+    Key([], 'XF86AudioRaiseVolume', lazy.spawn('amixer set Master 5%+')),
+    Key([], 'XF86AudioLowerVolume', lazy.spawn('amixer set Master 5%-'))
+    #Key([], 'XF86AudioMute', lazy.spawn('amixer set Master 5%-'))
 ]

@@ -43,7 +43,7 @@ screens = [
                     fontsize=22,
                     padding=0,
                     foreground=Colors["odBlack"],
-                    background="2D4263",
+                    background="535962",
                 ),
                 widget.WindowName(
                     font="MesloLGS NF:style=Bold",
@@ -51,14 +51,78 @@ screens = [
                     padding_x=1,
                     max_chars=65,
                     foreground=Colors["white"],
-                    background="2D4263",
+                    background="535962",
+                ),
+                widget.TextBox(
+                    text="\uE0B2",
+                    fontsize=22,
+                    padding=0,
+                    foreground="4E709D",
+                    background="535962",
+                ),
+                widget.TextBox(
+                    text="",
+                    fontsize=20,
+                    foreground=Colors["white"],
+                    background="4E709D",
+                    padding=0
+                ),
+                widget.Volume(
+                    foreground=Colors["white"],
+                    background="4E709D",
+                    fontsize=14,
+                    step=5,
+                    channel='Master',
+                ),
+                widget.TextBox(
+                    text="",
+                    fontsize=13,
+                    foreground=Colors["white"],
+                    background="4E709D",
+                    padding=0
+                ),
+                widget.Volume(
+                    foreground=Colors["white"],
+                    background="4E709D",
+                    fontsize=14,
+                    step=5,
+                    channel='Capture',
+                ),
+                widget.TextBox(
+                    text="\uE0B2",
+                    fontsize=22,
+                    background="4E709D",
+                    foreground="52524E",
+                    padding=0
+                ),
+                widget.Clock(
+                    foreground=Colors["white"],
+                    background="52524E",
+                    fontsize=13,
+                    format='%a %d %b %I:%M %p',
+                ),
+                widget.TextBox(
+                    text="\uE0B2",
+                    fontsize=22,
+                    padding=0,
+                    background="52524E",
+                    foreground="4E709D",
+                ),
+                widget.Battery(
+                    foreground=Colors["white"],
+                    background="4E709D",
+                    fontsize=13,
+                    charge_char="Charging",
+                    discharge_char="Discharging",
+                    format="{char} {percent:2.0%} ({hour:d}:{min:02d})",
+                    show_short_text=True,
                 ),
                 widget.TextBox(
                     text="\uE0B2",
                     fontsize=22,
                     padding=0,
                     foreground=Colors["odBlack"],
-                    background="2D4263",
+                    background="4E709D",
                 ),
                 widget.Systray(),
                 widget.Sep(
@@ -70,67 +134,12 @@ screens = [
                 widget.TextBox(
                     text="\uE0B2",
                     fontsize=22,
-                    foreground="4A47A3",
-                    padding=0
-                ),
-                widget.TextBox(
-                    text="",
-                    fontsize=24,
-                    foreground=Colors["white"],
-                    background="4A47A3",
-                    padding=0
-                ),
-                widget.Volume(
-                    foreground=Colors["white"],
-                    background="4A47A3",
-                    fontsize=15,
-                    step=5,
-                    channel='Master',
-                ),
-                widget.TextBox(
-                    text="\uE0B2",
-                    fontsize=22,
-                    foreground="62A388",
-                    background="4A47A3",
-                    padding=0
-                ),
-                widget.TextBox(
-                    text="",
-                    fontsize=16,
-                    foreground=Colors["white"],
-                    background="62A388",
-                    padding=0
-                ),
-                widget.Volume(
-                    foreground=Colors["white"],
-                    background="62A388",
-                    fontsize=15,
-                    step=5,
-                    channel='Capture',
-                ),
-                widget.TextBox(
-                    text="\uE0B2",
-                    fontsize=22,
-                    background="62A388",
-                    foreground="00A8CC",
-                    padding=0
-                ),
-                widget.Clock(
-                    foreground=Colors["white"],
-                    background="00A8CC",
-                    fontsize=15,
-                    format='%a %d %b %I:%M %p',
-                ),
-                widget.TextBox(
-                    text="\uE0B2",
-                    fontsize=22,
-                    padding=0,
-                    background="00A8CC",
                     foreground="AD1D45",
+                    padding=0
                 ),
                 widget.CurrentLayout(
                     font="mononoki Nerd Font:style=Bold",
-                    fontsize=16,
+                    fontsize=13,
                     foreground=Colors["white"],
                     background="AD1D45",
                     padding_x=1,
