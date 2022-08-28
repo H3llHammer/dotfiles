@@ -124,7 +124,9 @@ screens = [
                     foreground=Colors["odBlack"],
                     background="4E709D",
                 ),
-                widget.Systray(),
+                widget.Systray(
+                        icon_size=25,
+                        ),
                 widget.Sep(
                     linewidth=0,
                     padding=8,
