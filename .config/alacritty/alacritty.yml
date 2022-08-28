@@ -1,28 +1,33 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
+import:
+  - ~/.config/alacritty/dracula.yml
 
-#window:
-# padding:
-#   x: 5
-    #y: 5
-    #class:
-    #instance: Alacritty
-    #general: Alacritty
+window:
+ padding:
+   x: 5
+   y: 5
+ class:
+    instance: Alacritty
+    general: Alacritty
+ opacity: 0.8
 
-    #scrolling:
-    #  history: 10000
-    # multiplier: 3
+scrolling:
+    history: 10000
+    multiplier: 3
 
-# Import additional configuration files
-#
-# Imports are loaded in order, skipping all missing files, with the importing
-# file being loaded last. If a field is already present in a previous import, it
-# will be replaced.
-#
-# All imports must either be absolute paths starting with `/`, or paths relative
-# to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+cursor:
+  style:
+    shape: Block
+    blinking: off
 
+live_config_reload: true
+
+shell:
+  program: /usr/bin/zsh
+
+key_bindings:
+  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+    
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
