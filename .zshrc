@@ -37,8 +37,8 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Default programs
-export EDITOR="vim"
-export TERMINAL="urxvt"
+export EDITOR="nvim"
+export TERMINAL="kitty"
 export BROWSER="firefox"
 export PATH=$HOME/.local/bin:$PATH
 
@@ -50,6 +50,7 @@ export PATH=$HOME/.local/bin:$PATH
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null || \
     source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh 2>/dev/null
 
+## Load powerlevel10k
 [[ -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
