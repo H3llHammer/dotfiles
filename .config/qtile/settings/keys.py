@@ -2,7 +2,7 @@ from libqtile.config import EzKey
 from libqtile.config import Key
 from libqtile.lazy import lazy
 
-terminal = "prime-run alacritty"
+terminal = "prime-run kitty"
 mod = "mod4"
 
 keys = [
