@@ -9,6 +9,9 @@ alias -g \
     rm="rm -vI" \
     mkdir="mkdir -pv"
 
+# Kitty alias
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="kitty +kitten ssh"
+
 # Colorize commands when possible.
 alias -g \
     ls="ls -hN --color=auto --group-directories-first" \
