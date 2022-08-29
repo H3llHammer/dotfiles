@@ -19,7 +19,7 @@ map('n', '<leader>d', ':bd<CR>')
 map('n', '<leader>l', ':ls<CR>')
 
 -- Quit neovim
-map('n', '<C-q>', ':q<CR>')
+map('n', '<leader>q', ':q<CR>')
 
 map('n', "<leader><Tab>", ':b#<CR>')
 
