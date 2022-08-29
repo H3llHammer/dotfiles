@@ -75,6 +75,13 @@ screens = [
                     channel='Master',
                 ),
                 widget.TextBox(
+                    text="",
+                    fontsize=20,
+                    foreground="52524E",
+                    background="4E709D",
+                    padding=0
+                ),
+                widget.TextBox(
                     text="",
                     fontsize=13,
                     foreground=Colors["white"],
