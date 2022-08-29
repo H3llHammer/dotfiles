@@ -1,7 +1,7 @@
 \.git
-\.gitignore
-\.urxvt
 \.screenshots
+\.urxvt
+\.gitignore
 \.stow-local-ignore
 \.Xresources
 README.md
