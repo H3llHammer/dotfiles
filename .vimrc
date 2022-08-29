@@ -1,6 +1,6 @@
 " Load external files
-if filereadable(expand("~/.vimrc.plug"))
-    source ~/.vimrc.plug    " Call the plugins file
+if filereadable(expand("~/.vim/vimrc.plug"))
+    source ~/.vim/vimrc.plug    " Call the plugins file
 endif
 
 syntax on		    " Enable syntax highlight
@@ -33,8 +33,6 @@ set noshowmode		    " Don't show the show mode
 set noruler		    " Don't show current row and column
 set shortmess+=F	    " Don't give the file info when editing a file 
 set noshowcmd		    " Don't show command status
-
-colorscheme onedark
 
 "" Variables
 " Map leader
