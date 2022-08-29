@@ -12,8 +12,6 @@ vim.g.maplocalleader = ' '
 map('n', '<leader>w', ':update<CR>')
 map('n', '<leader>W', ':wall<CR>')
 
-map('n', '<leader>q', ':q<CR>')
-
 -- Move to the next/previous buffer
 map('n', '<S-Tab>', ':bn<CR>')
 map('n', '<A-Tab>', ':bp<CR>')
