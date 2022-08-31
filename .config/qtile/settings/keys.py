@@ -59,7 +59,7 @@ keys = [
     EzKey("M-S-s", lazy.spawn("flameshot gui")),
     EzKey("M-p", lazy.spawn("pavucontrol")),
     EzKey("M-r", lazy.spawn("dmenu_run -fn 'JetBrains Mono NL:Bold:pixelsize=16'")),
-    EzKey("M-l", lazy.spawn("xscreensaver-command -lock")),
+    EzKey("C-S-l", lazy.spawn("xscreensaver-command -lock")),
 
 
     # Audio
