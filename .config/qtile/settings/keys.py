@@ -2,7 +2,7 @@ from libqtile.config import EzKey
 from libqtile.config import Key
 from libqtile.lazy import lazy
 
-terminal = "prime-run kitty"
+terminal = "kitty"
 mod = "mod4"
 
 keys = [
@@ -59,6 +59,8 @@ keys = [
     EzKey("M-S-s", lazy.spawn("flameshot gui")),
     EzKey("M-p", lazy.spawn("pavucontrol")),
     EzKey("M-r", lazy.spawn("dmenu_run -fn 'JetBrains Mono NL:Bold:pixelsize=16'")),
+    EzKey("M-l", lazy.spawn("xscreensaver-command -lock")),
+
 
     # Audio
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('amixer set Master 5%+')),
