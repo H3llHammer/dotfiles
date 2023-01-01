@@ -47,6 +47,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='Pavucontrol'),  # volume control
     Match(wm_class='Xfce4-terminal'),  # xfce-terminal
     Match(wm_class='PacketTracer'),
+    Match(wm_class='Pinentry-gtk-2'),
     Match(wm_class='sxiv'),
     Match(wm_class='xdman-Main'),
     Match(wm_class='Lxappearance'),
