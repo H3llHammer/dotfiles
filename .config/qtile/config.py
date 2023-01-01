@@ -45,6 +45,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(wm_class='Pavucontrol'),  # volume control
+    Match(wm_class='Xfce4-terminal'),  # xfce-terminal
     Match(wm_class='PacketTracer'),
     Match(wm_class='sxiv'),
     Match(wm_class='xdman-Main'),
